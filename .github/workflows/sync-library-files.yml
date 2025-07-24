@@ -8,6 +8,7 @@ on:
             - '.github/workflows/sync-library-files.yml'
             - 'ExampleProject/Assets/Scripts/**'
             - 'ExampleProject/Assets/Resources/**'
+            - 'ExampleProject/Assets/Editor/Utils/**'
 
 jobs:
     sync-folders:
@@ -39,6 +40,7 @@ jobs:
                   # Copy folders from ExampleProject to root
                   git checkout dev -- ExampleProject/Assets/Scripts/Utils/
                   git checkout dev -- ExampleProject/Assets/Resources/
+                  git checkout dev -- ExampleProject/Assets/Editor/Utils/
 
                   # Move the folders to root
                   if [ -d "ExampleProject/Assets/Scripts/Utils/" ]; then
@@ -49,6 +51,11 @@ jobs:
                   if [ -d "ExampleProject/Assets/Resources/" ]; then
                     mkdir -p Assets/Resources/
                     mv ExampleProject/Assets/Resources/ ./Assets/Resources/
+                  fi
+
+                  if [ -d "ExampleProject/Assets/Editor/Utils/" ]; then
+                    mkdir -p Assets/Editor/Utils/
+                    mv ExampleProject/Assets/Editor/Utils/ Assets/Editor/
                   fi
 
                   # Clean up the ExampleProject structure we temporarily created
@@ -67,7 +74,7 @@ jobs:
               if: steps.check_changes.outputs.changes == 'true'
               run: |
                   git add .
-                  git commit -m "Sync Unity folders from dev branch"
+                  git commit -m "bot-chore: sync library files from dev"
                   git push origin main
 
             - name: No changes detected

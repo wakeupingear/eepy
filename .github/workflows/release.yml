@@ -1,25 +1,19 @@
-name: Deploy Demo
+name: Release Unity Package
 
 on:
     push:
-        branches:
-            - dev
-        paths:
-            - '.github/workflows/deploy-demo.yml'
-            - 'ExampleProject/**'
+        tags:
+            - 'v*'
 
 env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
-permissions:
-    contents: write
-
 jobs:
-    build:
-        name: Build Demo Project
+    export-and-release:
         runs-on: ubuntu-latest
+
         steps:
-            - name: Checkout code
+            - name: Checkout
               uses: actions/checkout@v4
               with:
                   lfs: true
@@ -31,19 +25,18 @@ jobs:
                   key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
                   restore-keys: Library-
 
-            - name: Unity - Builder
+            - name: Export Unity Package
               uses: game-ci/unity-builder@v4
+              with:
+                  targetPlatform: StandaloneWindows64
+                  projectPath: ExampleProject
+                  customParameters: '-quit -batchmode -executeMethod ExportPackage.PerformExport'
               env:
+                  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
                   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
                   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-              with:
-                  targetPlatform: WebGL
-                  buildName: WebBuild
-                  projectPath: ExampleProject
 
-            - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@v4
+            - name: Upload to GitHub Release
+              uses: softprops/action-gh-release@v2
               with:
-                  branch: gh-pages
-                  folder: build/WebGL/WebBuild
-                  clean: true
+                  files: Build/ExampleProject.unitypackage
