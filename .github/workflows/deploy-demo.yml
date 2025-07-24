@@ -30,6 +30,10 @@ jobs:
                   key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
                   restore-keys: Library-
 
+            # Apply csc.rsp (pre-processor symbols)
+            - name: Apply csc.rsp (pre-processor symbols)
+              run: echo -define:DISABLESTEAMWORKS >> Assets/csc.rsp
+
             # Build WebGL
             - name: Unity - Builder
               uses: game-ci/unity-builder@v4
