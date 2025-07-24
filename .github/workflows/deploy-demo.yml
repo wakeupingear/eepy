@@ -1,0 +1,49 @@
+name: Deploy Demo
+
+on:
+    push:
+        branches:
+            - dev
+
+env:
+    UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+        name: Build Demo Project
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout repository
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  lfs: true
+
+            # Cache Library folder
+            - name: Cache Library
+              uses: actions/cache@v3
+              with:
+                  path: Library
+                  key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+                  restore-keys: Library-
+
+            # Build WebGL
+            - name: Unity - Builder
+              uses: game-ci/unity-builder@v4
+              env:
+                  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+                  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+              with:
+                  targetPlatform: WebGL
+                  buildName: Build
+
+            # Deploy to GitHub Pages
+            - name: Deploy to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: gh-pages
+                  folder: build/WebGL/Build
+                  clean: true
