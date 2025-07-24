@@ -30,13 +30,6 @@ jobs:
                   key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
                   restore-keys: Library-
 
-            # Apply csc.rsp (pre-processor symbols)
-            - name: Apply csc.rsp (pre-processor symbols)
-              run: |
-                  mkdir -p Assets
-                  touch Assets/csc.rsp
-                  echo -define:DISABLESTEAMWORKS >> Assets/csc.rsp
-
             # Build WebGL
             - name: Unity - Builder
               uses: game-ci/unity-builder@v4
@@ -47,7 +40,6 @@ jobs:
                   targetPlatform: WebGL
                   buildName: WebBuild
                   projectPath: ExampleProject
-                  allowDirtyBuild: true
 
             # Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
