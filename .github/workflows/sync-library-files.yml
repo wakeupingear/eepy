@@ -1,0 +1,71 @@
+name: Sync Unity Folders to Main
+
+on:
+    push:
+        branches:
+            - dev
+
+jobs:
+    sync-folders:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout dev branch
+              uses: actions/checkout@v4
+              with:
+                  ref: dev
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  fetch-depth: 0
+
+            - name: Configure Git
+              run: |
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+            - name: Switch to main branch
+              run: |
+                  git checkout main
+                  git pull origin main
+
+            - name: Copy Unity folders from dev
+              run: |
+                  # Remove existing folders in root if they exist
+                  rm -rf Assets/
+                  rm -rf Resources/
+
+                  # Copy folders from ExampleProject to root
+                  git checkout dev -- ExampleProject/Assets/Scripts/Utils/
+                  git checkout dev -- ExampleProject/Resources/
+
+                  # Move the folders to root
+                  if [ -d "ExampleProject/Assets/Scripts/Utils/" ]; then
+                    mkdir -p Assets/Scripts/
+                    mv ExampleProject/Assets/Scripts/Utils/ Assets/Scripts/
+                  fi
+
+                  if [ -d "ExampleProject/Resources/" ]; then
+                    mv ExampleProject/Resources/ ./
+                  fi
+
+                  # Clean up the ExampleProject structure we temporarily created
+                  rm -rf ExampleProject/
+
+            - name: Check for changes
+              id: check_changes
+              run: |
+                  if [ -n "$(git status --porcelain)" ]; then
+                    echo "changes=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "changes=false" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Commit and push changes
+              if: steps.check_changes.outputs.changes == 'true'
+              run: |
+                  git add Assets/ Resources/
+                  git commit -m "Sync Unity folders from dev branch"
+                  git push origin main
+
+            - name: No changes detected
+              if: steps.check_changes.outputs.changes == 'false'
+              run: echo "No changes to sync from dev branch"

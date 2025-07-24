@@ -16,13 +16,11 @@ jobs:
         name: Build Demo Project
         runs-on: ubuntu-latest
         steps:
-            # Checkout repository
             - name: Checkout code
               uses: actions/checkout@v3
               with:
                   lfs: true
 
-            # Cache Library folder
             - name: Cache Library
               uses: actions/cache@v3
               with:
@@ -30,7 +28,6 @@ jobs:
                   key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
                   restore-keys: Library-
 
-            # Build WebGL
             - name: Unity - Builder
               uses: game-ci/unity-builder@v4
               env:
@@ -41,7 +38,6 @@ jobs:
                   buildName: WebBuild
                   projectPath: ExampleProject
 
-            # Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@v4
               with:

@@ -23,7 +23,6 @@ Featuring:
 * Steam Integration
     * Achievements
     * Stats
-* Discord Rich Presence
 
 ## Integration
 
