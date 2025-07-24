@@ -35,7 +35,7 @@ jobs:
             - name: Copy Unity folders from dev
               run: |
                   # Remove existing folders in root if they exist
-                  rm -rf Assets/
+                  sudo rm -rf Assets/
 
                   # Copy folders from ExampleProject to root
                   git checkout dev -- ExampleProject/Assets/Scripts/Utils/
