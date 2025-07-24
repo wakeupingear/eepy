@@ -33,9 +33,9 @@ jobs:
             # Apply csc.rsp (pre-processor symbols)
             - name: Apply csc.rsp (pre-processor symbols)
               run: |
-                mkdir -p Assets
-                touch Assets/csc.rsp
-                echo -define:DISABLESTEAMWORKS >> Assets/csc.rsp
+                  mkdir -p Assets
+                  touch Assets/csc.rsp
+                  echo -define:DISABLESTEAMWORKS >> Assets/csc.rsp
 
             # Build WebGL
             - name: Unity - Builder
@@ -47,6 +47,7 @@ jobs:
                   targetPlatform: WebGL
                   buildName: WebBuild
                   projectPath: ExampleProject
+                  allowDirtyBuild: true
 
             # Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
