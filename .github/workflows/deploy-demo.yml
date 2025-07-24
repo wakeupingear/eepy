@@ -32,7 +32,10 @@ jobs:
 
             # Apply csc.rsp (pre-processor symbols)
             - name: Apply csc.rsp (pre-processor symbols)
-              run: echo -define:DISABLESTEAMWORKS >> Assets/csc.rsp
+              run: |
+                mkdir -p Assets
+                touch Assets/csc.rsp
+                echo -define:DISABLESTEAMWORKS >> Assets/csc.rsp
 
             # Build WebGL
             - name: Unity - Builder
