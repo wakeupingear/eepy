@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - dev
+        paths:
+            - 'ExampleProject/**'
 
 env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}

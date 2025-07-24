@@ -4,6 +4,9 @@ on:
     push:
         branches:
             - dev
+        paths:
+            - 'ExampleProject/Assets/Scripts/**'
+            - 'ExampleProject/Assets/Resources/**'
 
 jobs:
     sync-folders:
@@ -31,11 +34,10 @@ jobs:
               run: |
                   # Remove existing folders in root if they exist
                   rm -rf Assets/
-                  rm -rf Resources/
 
                   # Copy folders from ExampleProject to root
                   git checkout dev -- ExampleProject/Assets/Scripts/Utils/
-                  git checkout dev -- ExampleProject/Resources/
+                  git checkout dev -- ExampleProject/Assets/Resources/
 
                   # Move the folders to root
                   if [ -d "ExampleProject/Assets/Scripts/Utils/" ]; then
@@ -43,8 +45,9 @@ jobs:
                     mv ExampleProject/Assets/Scripts/Utils/ Assets/Scripts/
                   fi
 
-                  if [ -d "ExampleProject/Resources/" ]; then
-                    mv ExampleProject/Resources/ ./
+                  if [ -d "ExampleProject/Assets/Resources/" ]; then
+                    mkdir -p Assets/Resources/
+                    mv ExampleProject/Assets/Resources/ ./Assets/Resources/
                   fi
 
                   # Clean up the ExampleProject structure we temporarily created
@@ -62,7 +65,7 @@ jobs:
             - name: Commit and push changes
               if: steps.check_changes.outputs.changes == 'true'
               run: |
-                  git add Assets/ Resources/
+                  git add .
                   git commit -m "Sync Unity folders from dev branch"
                   git push origin main
 
