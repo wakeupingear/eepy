@@ -36,26 +36,28 @@ jobs:
               run: |
                   # Remove existing folders in root if they exist
                   sudo rm -rf Assets/
+                  sudo rm -rf ExampleProject/
 
                   # Copy folders from ExampleProject to root
                   git checkout dev -- ExampleProject/Assets/Scripts/Utils/
                   git checkout dev -- ExampleProject/Assets/Resources/
                   git checkout dev -- ExampleProject/Assets/Editor/Utils/
 
+                  # Create destination directories
+                  mkdir -p Assets/Scripts/
+                  mkdir -p Assets/Editor/
+
                   # Move the folders to root
-                  if [ -d "ExampleProject/Assets/Scripts/Utils/" ]; then
-                    mkdir -p Assets/Scripts/
-                    mv ExampleProject/Assets/Scripts/Utils/ Assets/
+                  if [ -d "ExampleProject/Assets/Scripts/Utils" ]; then
+                    mv ExampleProject/Assets/Scripts/Utils/ Assets/Scripts/
                   fi
 
-                  if [ -d "ExampleProject/Assets/Resources/" ]; then
-                    mkdir -p Assets/Resources/
+                  if [ -d "ExampleProject/Assets/Resources" ]; then
                     mv ExampleProject/Assets/Resources/ Assets/
                   fi
 
-                  if [ -d "ExampleProject/Assets/Editor/Utils/" ]; then
-                    mkdir -p Assets/Editor/Utils/
-                    mv ExampleProject/Assets/Editor/Utils/ Assets/
+                  if [ -d "ExampleProject/Assets/Editor/Utils" ]; then
+                    mv ExampleProject/Assets/Editor/Utils/ Assets/Editor/
                   fi
 
                   # Clean up the ExampleProject structure we temporarily created
