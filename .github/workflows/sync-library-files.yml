@@ -60,9 +60,6 @@ jobs:
                     mv ExampleProject/Assets/Editor/Utils/ Assets/Editor/
                   fi
 
-                  # Clean up the ExampleProject structure we temporarily created
-                  rm -rf ExampleProject/
-
             - name: Check for changes
               id: check_changes
               run: |
