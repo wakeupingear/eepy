@@ -36,7 +36,6 @@ jobs:
               run: |
                   # Remove existing folders in root if they exist
                   sudo rm -rf Assets/
-                  sudo rm -rf ExampleProject/
 
                   # Copy folders from ExampleProject to root
                   git checkout dev -- ExampleProject/Assets/Scripts/Utils/
@@ -63,7 +62,7 @@ jobs:
             - name: Check for changes
               id: check_changes
               run: |
-                  if [ -n "$(git status --porcelain)" ]; then
+                  if [ -n "$(git status --porcelain Assets/)" ]; then
                     echo "changes=true" >> $GITHUB_OUTPUT
                   else
                     echo "changes=false" >> $GITHUB_OUTPUT
