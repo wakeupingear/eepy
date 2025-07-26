@@ -807,7 +807,7 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Standalone: STEAMWORKS_NET;DISABLESTEAMWORKS
-    WebGL: STEAMWORKS_NET
+    WebGL: STEAMWORKS_NET;DISABLESTEAMWORKS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
