@@ -46,17 +46,17 @@ jobs:
                   mkdir -p Assets/Scripts/
                   mkdir -p Assets/Editor/
 
-                  # Move the folders to root
+                  # Move the folders to root, excluding .meta files
                   if [ -d "ExampleProject/Assets/Scripts/Utils" ]; then
-                    mv ExampleProject/Assets/Scripts/Utils/ Assets/Scripts/
+                    find ExampleProject/Assets/Scripts/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
                   fi
 
                   if [ -d "ExampleProject/Assets/Resources" ]; then
-                    mv ExampleProject/Assets/Resources/ Assets/
+                    find ExampleProject/Assets/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
                   fi
 
                   if [ -d "ExampleProject/Assets/Editor/Utils" ]; then
-                    mv ExampleProject/Assets/Editor/Utils/ Assets/Editor/
+                    find ExampleProject/Assets/Editor/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
                   fi
 
             - name: Check for changes
