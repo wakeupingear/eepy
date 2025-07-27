@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0458d27dc274d939c6455261cf5097, type: 3}
   m_Name: PlayStation4
   m_EditorClassIdentifier: 
-  controllerName: DualSense
+  controllerName: DualShock
   controllerNameLocalizationKey: 
   searchTerms:
-  - DualSense
+  - Sony Interactive
   keyBindings:
   - code: -8
     keyCode: 332
@@ -96,11 +96,11 @@ MonoBehaviour:
     keySprite: {fileID: 21300000, guid: 0a1c30e1e1b2b41aa8c5639d1cf8978c, type: 3}
   - code: -1
     axis: PlayStation_DPadY
-    dir: 0
+    dir: 1
     keySprite: {fileID: 21300000, guid: 02a83f031f1714c2585b13cacdf382ce, type: 3}
   - code: -2
     axis: PlayStation_DPadY
-    dir: 1
+    dir: 0
     keySprite: {fileID: 21300000, guid: e1273c60f433749f08ae2a83ced85f56, type: 3}
   dPadSprite: {fileID: 21300000, guid: 33a1d1fbbb70f427e885d88ae903ccdb, type: 3}
   leftStickSprite: {fileID: 21300000, guid: aa7e4a9b3c6264aab877ffae6611592f, type: 3}

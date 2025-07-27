@@ -10,91 +10,91 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
-  m_Name: English
+  m_Name: Spanish
   m_EditorClassIdentifier: 
-  languageCode: en
-  languageName: English
+  languageCode: es
+  languageName: "Espa\xF1ol"
   font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
   entries:
   - key: language_name
-    value: English
+    value: "Espa\xF1ol"
   - key: settings
-    value: Settings
+    value: "Configuraci\xF3n"
   - key: resume
-    value: Resume
+    value: Reanudar
   - key: restart
-    value: Restart Puzzle
+    value: Reiniciar Puzles
   - key: quit
-    value: Quit
+    value: Salir
   - key: display
-    value: Display Mode
+    value: Modo de Pantalla
   - key: fullscreen
-    value: Fullscreen
+    value: Completa
   - key: windowed
-    value: Windowed
+    value: Ventana
   - key: borderless
-    value: Borderless
+    value: Sin Bordes
   - key: overallVolume
-    value: Overall Volume
+    value: Volumen General
   - key: musicVolume
-    value: Music Volume
+    value: "Volumen de M\xFAsica"
   - key: sfxVolume
-    value: SFX Volume
+    value: Volumen de Efectos
   - key: language
-    value: Language
+    value: Idioma
   - key: on
-    value: On
+    value: Act
   - key: off
-    value: Off
+    value: Des
   - key: vsync
     value: VSync
   - key: back
-    value: Back
+    value: Volver
   - key: resolution
-    value: Resolution
+    value: "Resoluci\xF3n"
   - key: controls
-    value: Controls
+    value: Controles
   - key: left
-    value: Left
+    value: Izquierda
   - key: right
-    value: Right
+    value: Derecha
   - key: up
-    value: Up
+    value: Arriba
   - key: down
-    value: Down
+    value: Abajo
   - key: pause
-    value: Pause
+    value: Pausa
   - key: interact
-    value: Interact
+    value: Interactuar
   - key: add_keybinding
-    value: Add New Binding
+    value: "Agregar Nueva Asignaci\xF3n"
   - key: adding_keybinding
-    value: Press Any Unused Key
+    value: Presiona Cualquier Tecla No Usada
   - key: keybindings
-    value: Key Bindings
+    value: Asignaciones de Teclas
   - key: quit_confirm
-    value: Really Quit?
+    value: "\xBFRealmente Salir?"
   - key: yes
-    value: Yes
+    value: "S\xED"
   - key: no
     value: No
   - key: remove_keybinding
-    value: Remove
+    value: Eliminar
   - key: reset_all
-    value: Reset All
+    value: Resetear Todo
   - key: reset_all_confirm
-    value: Really Reset?
+    value: "\xBFRealmente Resetear?"
   - key: manage_save
-    value: Load a Game
+    value: Cargar Partida
   - key: save
-    value: Save
+    value: Guardar
   - key: empty
-    value: Empty
+    value: "Vac\xEDo"
   - key: remove_save_confirm
-    value: Remove Save?
+    value: "\xBFEliminar Guardado?"
   - key: cancel
-    value: Cancel
+    value: Cancelar
   - key: invalid_keybinding
-    value: Key is Already in Use
+    value: "La Tecla Ya Est\xE1 en Uso"
   - key: rumble
-    value: Rumble
+    value: "Vibraci\xF3n"

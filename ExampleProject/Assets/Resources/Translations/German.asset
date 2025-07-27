@@ -10,91 +10,91 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
-  m_Name: English
+  m_Name: German
   m_EditorClassIdentifier: 
-  languageCode: en
-  languageName: English
+  languageCode: de
+  languageName: Deutsch
   font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
   entries:
   - key: language_name
-    value: English
+    value: Deutsch
   - key: settings
-    value: Settings
+    value: Einstellungen
   - key: resume
-    value: Resume
+    value: Fortsetzen
   - key: restart
-    value: Restart Puzzle
+    value: Puzzle neustarten
   - key: quit
-    value: Quit
+    value: Beenden
   - key: display
-    value: Display Mode
+    value: Anzeigemodus
   - key: fullscreen
-    value: Fullscreen
+    value: Vollbild
   - key: windowed
-    value: Windowed
+    value: Fenster
   - key: borderless
-    value: Borderless
+    value: Randlos
   - key: overallVolume
-    value: Overall Volume
+    value: "Gesamtlautst\xE4rke"
   - key: musicVolume
-    value: Music Volume
+    value: Musik
   - key: sfxVolume
-    value: SFX Volume
+    value: Effekte
   - key: language
-    value: Language
+    value: Sprache
   - key: on
-    value: On
+    value: Ein
   - key: off
-    value: Off
+    value: Aus
   - key: vsync
     value: VSync
   - key: back
-    value: Back
+    value: "Zur\xFCck"
   - key: resolution
-    value: Resolution
+    value: "Aufl\xF6sung"
   - key: controls
-    value: Controls
+    value: Steuerung
   - key: left
-    value: Left
+    value: Links
   - key: right
-    value: Right
+    value: Rechts
   - key: up
-    value: Up
+    value: Oben
   - key: down
-    value: Down
+    value: Unten
   - key: pause
-    value: Pause
+    value: Pausieren
   - key: interact
-    value: Interact
+    value: Interagieren
   - key: add_keybinding
-    value: Add New Binding
+    value: Neue Tastenbelegung
   - key: adding_keybinding
-    value: Press Any Unused Key
+    value: "Beliebige unbenutzte Taste dr\xFCcken"
   - key: keybindings
-    value: Key Bindings
+    value: Tastenbelegungen
   - key: quit_confirm
-    value: Really Quit?
+    value: Wirklich beenden?
   - key: yes
-    value: Yes
+    value: Ja
   - key: no
-    value: No
+    value: Nein
   - key: remove_keybinding
-    value: Remove
+    value: Entfernen
   - key: reset_all
-    value: Reset All
+    value: "Alle zur\xFCcksetzen"
   - key: reset_all_confirm
-    value: Really Reset?
+    value: "Wirklich zur\xFCcksetzen?"
   - key: manage_save
-    value: Load a Game
+    value: Spiel laden
   - key: save
-    value: Save
+    value: Datei
   - key: empty
-    value: Empty
+    value: Leer
   - key: remove_save_confirm
-    value: Remove Save?
+    value: "Datei l\xF6schen?"
   - key: cancel
-    value: Cancel
+    value: Abbrechen
   - key: invalid_keybinding
-    value: Key is Already in Use
+    value: Taste bereits belegt
   - key: rumble
-    value: Rumble
+    value: Vibration

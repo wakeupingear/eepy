@@ -9,6 +9,8 @@ public class Text : MonoBehaviour
 
     [SerializeField]
     private string localizationKey;
+    [SerializeField]
+    private bool useGlobalFont = true;
 
     private void Awake()
     {
@@ -26,7 +28,7 @@ public class Text : MonoBehaviour
         {
             text.text = LocalizationManager.Get(localizationKey);
         }
-        if (text != null)
+        if (text != null && useGlobalFont)
         {
             text.font = translation.font;
         }

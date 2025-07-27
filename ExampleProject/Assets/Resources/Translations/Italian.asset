@@ -10,91 +10,91 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
-  m_Name: English
+  m_Name: Italian
   m_EditorClassIdentifier: 
-  languageCode: en
-  languageName: English
+  languageCode: it
+  languageName: Italiano
   font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
   entries:
   - key: language_name
-    value: English
+    value: Italiano
   - key: settings
-    value: Settings
+    value: Impostazioni
   - key: resume
-    value: Resume
+    value: Riprendi
   - key: restart
-    value: Restart Puzzle
+    value: Riavvia Puzzle
   - key: quit
-    value: Quit
+    value: Esci
   - key: display
-    value: Display Mode
+    value: "Modalit\xE0 Display"
   - key: fullscreen
-    value: Fullscreen
+    value: Intero
   - key: windowed
-    value: Windowed
+    value: Finestra
   - key: borderless
-    value: Borderless
+    value: Senza Bordi
   - key: overallVolume
-    value: Overall Volume
+    value: Volume Generale
   - key: musicVolume
-    value: Music Volume
+    value: Musica
   - key: sfxVolume
-    value: SFX Volume
+    value: Effetti
   - key: language
-    value: Language
+    value: Lingua
   - key: on
-    value: On
+    value: Att
   - key: off
-    value: Off
+    value: Dis
   - key: vsync
     value: VSync
   - key: back
-    value: Back
+    value: Indietro
   - key: resolution
-    value: Resolution
+    value: Risoluzione
   - key: controls
-    value: Controls
+    value: Controlli
   - key: left
-    value: Left
+    value: Sinistra
   - key: right
-    value: Right
+    value: Destra
   - key: up
-    value: Up
+    value: Su
   - key: down
-    value: Down
+    value: "Gi\xF9"
   - key: pause
-    value: Pause
+    value: Pausa
   - key: interact
-    value: Interact
+    value: Interagisci
   - key: add_keybinding
-    value: Add New Binding
+    value: Aggiungi Nuovo Tasto
   - key: adding_keybinding
-    value: Press Any Unused Key
+    value: Premi Qualsiasi Tasto Libero
   - key: keybindings
-    value: Key Bindings
+    value: Tasti Associati
   - key: quit_confirm
-    value: Really Quit?
+    value: Vuoi Davvero Uscire?
   - key: yes
-    value: Yes
+    value: "S\xEC"
   - key: no
     value: No
   - key: remove_keybinding
-    value: Remove
+    value: Rimuovi
   - key: reset_all
-    value: Reset All
+    value: Reimposta Tutto
   - key: reset_all_confirm
-    value: Really Reset?
+    value: Vuoi Davvero Resettare?
   - key: manage_save
-    value: Load a Game
+    value: Carica Partita
   - key: save
-    value: Save
+    value: Salv
   - key: empty
-    value: Empty
+    value: Vuoto
   - key: remove_save_confirm
-    value: Remove Save?
+    value: Eliminare Salvataggio?
   - key: cancel
-    value: Cancel
+    value: Annulla
   - key: invalid_keybinding
-    value: Key is Already in Use
+    value: "Tasto Gi\xE0 in Uso"
   - key: rumble
-    value: Rumble
+    value: Vibrazione

@@ -10,91 +10,91 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
-  m_Name: English
+  m_Name: Swedish
   m_EditorClassIdentifier: 
-  languageCode: en
-  languageName: English
+  languageCode: sv
+  languageName: Svenska
   font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
   entries:
   - key: language_name
-    value: English
+    value: Svenska
   - key: settings
-    value: Settings
+    value: "Inst\xE4llningar"
   - key: resume
-    value: Resume
+    value: "Forts\xE4tt"
   - key: restart
-    value: Restart Puzzle
+    value: Starta om pussel
   - key: quit
-    value: Quit
+    value: Avsluta
   - key: display
-    value: Display Mode
+    value: "Sk\xE4rml\xE4ge"
   - key: fullscreen
-    value: Fullscreen
+    value: "Helsk\xE4rm"
   - key: windowed
-    value: Windowed
+    value: "F\xF6nster"
   - key: borderless
-    value: Borderless
+    value: "Raml\xF6s"
   - key: overallVolume
-    value: Overall Volume
+    value: Huvudvolym
   - key: musicVolume
-    value: Music Volume
+    value: Musikvolym
   - key: sfxVolume
-    value: SFX Volume
+    value: Ljudeffektsvolym
   - key: language
-    value: Language
+    value: "Spr\xE5k"
   - key: on
-    value: On
+    value: "P\xE5"
   - key: off
-    value: Off
+    value: Av
   - key: vsync
     value: VSync
   - key: back
-    value: Back
+    value: Tillbaka
   - key: resolution
-    value: Resolution
+    value: "Uppl\xF6sning"
   - key: controls
-    value: Controls
+    value: Kontroller
   - key: left
-    value: Left
+    value: "V\xE4nster"
   - key: right
-    value: Right
+    value: "H\xF6ger"
   - key: up
-    value: Up
+    value: Upp
   - key: down
-    value: Down
+    value: Ner
   - key: pause
-    value: Pause
+    value: Paus
   - key: interact
-    value: Interact
+    value: Interagera
   - key: add_keybinding
-    value: Add New Binding
+    value: "L\xE4gg till ny bindning"
   - key: adding_keybinding
-    value: Press Any Unused Key
+    value: "Tryck p\xE5 valfri oanv\xE4nd tangent"
   - key: keybindings
-    value: Key Bindings
+    value: Tangentbindningar
   - key: quit_confirm
-    value: Really Quit?
+    value: Verkligen avsluta?
   - key: yes
-    value: Yes
+    value: Ja
   - key: no
-    value: No
+    value: Nej
   - key: remove_keybinding
-    value: Remove
+    value: Ta bort
   - key: reset_all
-    value: Reset All
+    value: "\xC5terst\xE4ll alla"
   - key: reset_all_confirm
-    value: Really Reset?
+    value: "Verkligen \xE5terst\xE4lla?"
   - key: manage_save
-    value: Load a Game
+    value: Ladda spel
   - key: save
-    value: Save
+    value: Spara
   - key: empty
-    value: Empty
+    value: Tom
   - key: remove_save_confirm
-    value: Remove Save?
+    value: Ta bort sparfil?
   - key: cancel
-    value: Cancel
+    value: Avbryt
   - key: invalid_keybinding
-    value: Key is Already in Use
+    value: "Tangenten anv\xE4nds redan"
   - key: rumble
-    value: Rumble
+    value: Vibration
