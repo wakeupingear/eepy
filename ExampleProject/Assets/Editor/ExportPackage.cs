@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using System.IO;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class ExportPackage
     {
         string exportPath = "Build/ExampleProject.unitypackage";
         string[] assetPaths = new string[] {
-            "Assets/MyCustomPackage"
+            "Assets/Package"
         };
 
         if (!Directory.Exists("Build"))
@@ -18,3 +19,4 @@ public class ExportPackage
         Debug.Log("Package exported to " + exportPath);
     }
 }
+#endif

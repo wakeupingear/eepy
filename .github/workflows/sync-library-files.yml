@@ -6,9 +6,7 @@ on:
             - dev
         paths:
             - '.github/workflows/sync-library-files.yml'
-            - 'ExampleProject/Assets/Scripts/**'
-            - 'ExampleProject/Assets/Resources/**'
-            - 'ExampleProject/Assets/Editor/Utils/**'
+            - 'ExampleProject/Assets/Package/**'
 
 jobs:
     sync-folders:
@@ -45,16 +43,16 @@ jobs:
                   mkdir -p Assets/Editor/
 
                   # Move the folders to root, excluding .meta files
-                  if [ -d "ExampleProject/Assets/Scripts/Utils" ]; then
-                    find ExampleProject/Assets/Scripts/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
+                  if [ -d "ExampleProject/Assets/Package/Scripts/Utils" ]; then
+                    find ExampleProject/Assets/Package/Scripts/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
                   fi
 
-                  if [ -d "ExampleProject/Assets/Resources" ]; then
-                    find ExampleProject/Assets/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
+                  if [ -d "ExampleProject/Assets/Package/Resources" ]; then
+                    find ExampleProject/Assets/Package/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
                   fi
 
-                  if [ -d "ExampleProject/Assets/Editor/Utils" ]; then
-                    find ExampleProject/Assets/Editor/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
+                  if [ -d "ExampleProject/Assets/Package/Editor/Utils" ]; then
+                    find ExampleProject/Assets/Package/Editor/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
                   fi
 
             - name: Add all files
