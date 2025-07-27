@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0458d27dc274d939c6455261cf5097, type: 3}
+  m_Name: Xbox
+  m_EditorClassIdentifier: 
+  controllerName: Xbox
+  controllerNameLocalizationKey: 
+  searchTerms:
+  - XBOX 360
+  keyBindings:
+  - code: -8
+    keyCode: 331
+    keySprite: {fileID: 21300000, guid: 6bef1426f527642a4a16586f265698af, type: 3}
+  - code: -7
+    keyCode: 332
+    keySprite: {fileID: 21300000, guid: 2dc323d630d3c45959e66b27782cc582, type: 3}
+  - code: -6
+    keyCode: 330
+    keySprite: {fileID: 21300000, guid: 73abbcb7279da46c7a2a063574a269e9, type: 3}
+  - code: -5
+    keyCode: 333
+    keySprite: {fileID: 21300000, guid: 4b93edaa41ef14310b275de2b10aef57, type: 3}
+  - code: -9
+    keyCode: 334
+    keySprite: {fileID: 21300000, guid: 845a038d66d004d22b77f4d5f34ad6df, type: 3}
+  - code: -10
+    keyCode: 335
+    keySprite: {fileID: 21300000, guid: 6285a2de2cb9e48db9005f9c13b6a776, type: 3}
+  - code: -11
+    keyCode: 336
+    keySprite: {fileID: 21300000, guid: ffefcd709d2db456894e8e3a790e3c5d, type: 3}
+  - code: -12
+    keyCode: 337
+    keySprite: {fileID: 21300000, guid: d7a6da941731b4c6585effdd28b7a28e, type: 3}
+  - code: -13
+    keyCode: 336
+    keySprite: {fileID: 21300000, guid: c06d506025a1647b293b9c39422c4677, type: 3}
+  - code: -14
+    keyCode: 337
+    keySprite: {fileID: 21300000, guid: e87bd135f4df340d090f2e9ab151a9ef, type: 3}
+  - code: -15
+    keyCode: 338
+    keySprite: {fileID: 21300000, guid: c698f322ae5ec4c85ac7d44b8c167b46, type: 3}
+  - code: -16
+    keyCode: 339
+    keySprite: {fileID: 21300000, guid: 118b9090df42e4d70bffabb476d93635, type: 3}
+  axisBindings:
+  - code: -19
+    axis: Xbox_LeftStickX
+    dir: 1
+    keySprite: {fileID: 21300000, guid: da5b00f044fee42f3b35dc8f8d836e6d, type: 3}
+  - code: -20
+    axis: Xbox_LeftStickX
+    dir: 0
+    keySprite: {fileID: 21300000, guid: e47dc863077a442328ff10c7e7bf5c35, type: 3}
+  - code: -17
+    axis: Xbox_LeftStickY
+    dir: 1
+    keySprite: {fileID: 21300000, guid: a96de158eb60549199310a2c42de81b8, type: 3}
+  - code: -18
+    axis: Xbox_LeftStickY
+    dir: 0
+    keySprite: {fileID: 21300000, guid: ad15a6e9b8cd142b69c8ac845c4a5d48, type: 3}
+  - code: -23
+    axis: Xbox_RightStickX
+    dir: 1
+    keySprite: {fileID: 21300000, guid: 8af7ec1c312e44865a0ce9838ac36044, type: 3}
+  - code: -24
+    axis: Xbox_RightStickX
+    dir: 0
+    keySprite: {fileID: 21300000, guid: 31183a06500e04870b0425cd9fa6b0f3, type: 3}
+  - code: -21
+    axis: Xbox_RightStickY
+    dir: 1
+    keySprite: {fileID: 21300000, guid: c6fda725d468747f98d3d4f7d7cc827a, type: 3}
+  - code: -22
+    axis: Xbox_RightStickY
+    dir: 0
+    keySprite: {fileID: 21300000, guid: 35059724a91034aaca3ef1267fdf92e2, type: 3}
+  - code: -3
+    axis: Xbox_DPadX
+    dir: 1
+    keySprite: {fileID: 21300000, guid: 459c7d9800c0b460e8e422679fe378a5, type: 3}
+  - code: -4
+    axis: Xbox_DPadX
+    dir: 0
+    keySprite: {fileID: 21300000, guid: 0a1c30e1e1b2b41aa8c5639d1cf8978c, type: 3}
+  - code: -1
+    axis: Xbox_DPadY
+    dir: 0
+    keySprite: {fileID: 21300000, guid: 02a83f031f1714c2585b13cacdf382ce, type: 3}
+  - code: -2
+    axis: Xbox_DPadY
+    dir: 1
+    keySprite: {fileID: 21300000, guid: e1273c60f433749f08ae2a83ced85f56, type: 3}
+  - code: -11
+    axis: Xbox_LeftTrigger
+    dir: 1
+    keySprite: {fileID: 21300000, guid: ffefcd709d2db456894e8e3a790e3c5d, type: 3}
+  - code: -12
+    axis: Xbox_RightTrigger
+    dir: 1
+    keySprite: {fileID: 21300000, guid: d7a6da941731b4c6585effdd28b7a28e, type: 3}
+  dPadSprite: {fileID: 21300000, guid: 33a1d1fbbb70f427e885d88ae903ccdb, type: 3}
+  leftStickSprite: {fileID: 21300000, guid: aa7e4a9b3c6264aab877ffae6611592f, type: 3}
+  rightStickSprite: {fileID: 21300000, guid: 5d6f2839b2fa34ab480c84e77b09c8f8, type: 3}
