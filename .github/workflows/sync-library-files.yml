@@ -38,9 +38,7 @@ jobs:
                   sudo rm -rf Assets/
 
                   # Copy folders from ExampleProject to root
-                  git checkout dev -- ExampleProject/Assets/Scripts/Utils/
-                  git checkout dev -- ExampleProject/Assets/Resources/
-                  git checkout dev -- ExampleProject/Assets/Editor/Utils/
+                  git checkout dev -- ExampleProject/
 
                   # Create destination directories
                   mkdir -p Assets/Scripts/
