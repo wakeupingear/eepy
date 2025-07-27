@@ -43,16 +43,16 @@ jobs:
                   mkdir -p Assets/Editor/
 
                   # Move the folders to root, excluding .meta files
-                  if [ -d "ExampleProject/Assets/Package/Scripts/Utils" ]; then
-                    find ExampleProject/Assets/Package/Scripts/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
+                  if [ -d "ExampleProject/Assets/Package/Scripts" ]; then
+                    find ExampleProject/Assets/Package/Scripts/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
                   fi
 
                   if [ -d "ExampleProject/Assets/Package/Resources" ]; then
                     find ExampleProject/Assets/Package/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
                   fi
 
-                  if [ -d "ExampleProject/Assets/Package/Editor/Utils" ]; then
-                    find ExampleProject/Assets/Package/Editor/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
+                  if [ -d "ExampleProject/Assets/Package/Editor" ]; then
+                    find ExampleProject/Assets/Package/Editor/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
                   fi
 
             - name: Add all files
