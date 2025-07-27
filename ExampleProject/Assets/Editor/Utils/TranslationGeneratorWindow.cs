@@ -81,7 +81,8 @@ public class TranslationGeneratorWindow : EditorWindow
         foreach (string language in allWords.Keys)
         {
             string filePath = "Assets/Resources/Translations/" + language + ".txt";
-            File.WriteAllLines(filePath, allWords[language]);
+            string content = string.Join(" ", allWords[language]);
+            File.WriteAllText(filePath, content);
         }
 
         foreach (GameTranslation translation in translationMap.Values)

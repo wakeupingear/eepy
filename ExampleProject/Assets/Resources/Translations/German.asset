@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: German
+  m_EditorClassIdentifier: 
+  languageCode: de
+  languageName: Deutsch
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
+  entries:
+  - key: language_name
+    value: Deutsch
+  - key: settings
+    value: Einstellungen
+  - key: resume
+    value: Fortsetzen
+  - key: restart
+    value: Puzzle neustarten
+  - key: quit
+    value: Beenden
+  - key: display
+    value: Anzeigemodus
+  - key: fullscreen
+    value: Vollbild
+  - key: windowed
+    value: Fenster
+  - key: borderless
+    value: Randlos
+  - key: overallVolume
+    value: "Gesamtlautst\xE4rke"
+  - key: musicVolume
+    value: Musik
+  - key: sfxVolume
+    value: Effekte
+  - key: language
+    value: Sprache
+  - key: on
+    value: Ein
+  - key: off
+    value: Aus
+  - key: vsync
+    value: VSync
+  - key: back
+    value: "Zur\xFCck"
+  - key: resolution
+    value: "Aufl\xF6sung"
+  - key: controls
+    value: Steuerung
+  - key: left
+    value: Links
+  - key: right
+    value: Rechts
+  - key: up
+    value: Oben
+  - key: down
+    value: Unten
+  - key: pause
+    value: Pausieren
+  - key: interact
+    value: Interagieren
+  - key: add_keybinding
+    value: Neue Tastenbelegung
+  - key: adding_keybinding
+    value: "Beliebige unbenutzte Taste dr\xFCcken"
+  - key: keybindings
+    value: Tastenbelegungen
+  - key: quit_confirm
+    value: Wirklich beenden?
+  - key: yes
+    value: Ja
+  - key: no
+    value: Nein
+  - key: remove_keybinding
+    value: Entfernen
+  - key: reset_all
+    value: "Alle zur\xFCcksetzen"
+  - key: reset_all_confirm
+    value: "Wirklich zur\xFCcksetzen?"
+  - key: manage_save
+    value: Spiel laden
+  - key: save
+    value: Datei
+  - key: empty
+    value: Leer
+  - key: remove_save_confirm
+    value: "Datei l\xF6schen?"
+  - key: cancel
+    value: Abbrechen
+  - key: invalid_keybinding
+    value: Taste bereits belegt
+  - key: rumble
+    value: Vibration

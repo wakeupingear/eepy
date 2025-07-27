@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   languageCode: en
   languageName: English
-  font: {fileID: 0}
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
   entries:
   - key: language_name
     value: English

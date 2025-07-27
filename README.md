@@ -51,3 +51,7 @@ LocalizationManager
 ```
 
 ## Overview
+
+## Misc Things to Know
+
+- **All fonts are variable by default.** This ensures that all font decoration (bold, italic, etc) are supported. If your game only needs one style of text decoration, you can download the single weight versions from [Google Fonts](https://fonts.google.com/) and shave off 25% to 75% of the fonts' disk space.

@@ -59,10 +59,14 @@ jobs:
                     find ExampleProject/Assets/Editor/Utils/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
                   fi
 
+            - name: Add all files
+              run: |
+                  git add .
+
             - name: Check for changes
               id: check_changes
               run: |
-                  if [ -n "$(git status --porcelain Assets/)" ]; then
+                  if [ -n "$(git status --porcelain)" ]; then
                     echo "changes=true" >> $GITHUB_OUTPUT
                   else
                     echo "changes=false" >> $GITHUB_OUTPUT
@@ -71,7 +75,6 @@ jobs:
             - name: Commit and push changes
               if: steps.check_changes.outputs.changes == 'true'
               run: |
-                  git add .
                   git commit -m "bot-chore: sync library files from dev"
                   git push origin main
 

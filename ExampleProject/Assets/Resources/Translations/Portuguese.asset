@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: Portuguese
+  m_EditorClassIdentifier: 
+  languageCode: pt
+  languageName: "Portugu\xEAs"
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
+  entries:
+  - key: language_name
+    value: "Portugu\xEAs"
+  - key: settings
+    value: "Configura\xE7\xF5es"
+  - key: resume
+    value: Continuar
+  - key: restart
+    value: Reiniciar Puzzle
+  - key: quit
+    value: Sair
+  - key: display
+    value: "Modo de Exibi\xE7\xE3o"
+  - key: fullscreen
+    value: Tela Cheia
+  - key: windowed
+    value: Janela
+  - key: borderless
+    value: Sem Bordas
+  - key: overallVolume
+    value: Volume Geral
+  - key: musicVolume
+    value: "Volume da M\xFAsica"
+  - key: sfxVolume
+    value: Volume de Efeitos
+  - key: language
+    value: Idioma
+  - key: on
+    value: Lig
+  - key: off
+    value: Des
+  - key: vsync
+    value: VSync
+  - key: back
+    value: Voltar
+  - key: resolution
+    value: "Resolu\xE7\xE3o"
+  - key: controls
+    value: Controles
+  - key: left
+    value: Esquerda
+  - key: right
+    value: Direita
+  - key: up
+    value: Cima
+  - key: down
+    value: Baixo
+  - key: pause
+    value: Pausar
+  - key: interact
+    value: Interagir
+  - key: add_keybinding
+    value: "Adicionar Nova Atribui\xE7\xE3o"
+  - key: adding_keybinding
+    value: "Pressione Qualquer Tecla N\xE3o Usada"
+  - key: keybindings
+    value: "Atribui\xE7\xF5es de Teclas"
+  - key: quit_confirm
+    value: Realmente Sair?
+  - key: yes
+    value: Sim
+  - key: no
+    value: "N\xE3o"
+  - key: remove_keybinding
+    value: Remover
+  - key: reset_all
+    value: Redefinir Tudo
+  - key: reset_all_confirm
+    value: Realmente Redefinir?
+  - key: manage_save
+    value: Carregar Jogo
+  - key: save
+    value: Arquivo
+  - key: empty
+    value: Vazio
+  - key: remove_save_confirm
+    value: Remover Arquivo?
+  - key: cancel
+    value: Cancelar
+  - key: invalid_keybinding
+    value: "Tecla J\xE1 Est\xE1 em Uso"
+  - key: rumble
+    value: "Vibra\xE7\xE3o"
