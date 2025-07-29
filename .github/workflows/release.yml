@@ -7,6 +7,8 @@ on:
 
 env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+    UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+    UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
 
 jobs:
     export-and-release:
@@ -25,16 +27,17 @@ jobs:
                   key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
                   restore-keys: Library-
 
+            - name: Setup Unity
+              uses: game-ci/unity-activate@v2
+
             - name: Export Unity Package
-              uses: game-ci/unity-builder@v4
-              with:
-                  targetPlatform: StandaloneWindows64
-                  projectPath: ExampleProject
-                  customParameters: '-executeMethod ExportPackage.PerformExport'
-              env:
-                  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-                  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-                  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+              run: |
+                  unity-editor \
+                  -batchmode \
+                  -quit \
+                  -projectPath ExampleProject \
+                  -executeMethod ExportPackage.PerformExport \
+                  -logFile /dev/stdout
 
             - name: Upload to GitHub Release
               uses: softprops/action-gh-release@v2

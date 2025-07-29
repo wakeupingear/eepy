@@ -118,12 +118,15 @@ public class MenuButton : MenuInput, IPointerEnterHandler, IPointerExitHandler, 
 
     public void SetDisabled(bool disabled)
     {
-        isDisabled = disabled;
-        SetTextColor(isFocused && !disabled ? focusedColor : normalColor);
-
-        if (disabled)
+        if (isDisabled != disabled)
         {
-            Unfocus(false);
+            isDisabled = disabled;
+            if (isFocused && disabled)
+            {
+                Unfocus(false);
+            }
+
+            SetTextColor(GetPrimaryText().text.color);
         }
     }
 

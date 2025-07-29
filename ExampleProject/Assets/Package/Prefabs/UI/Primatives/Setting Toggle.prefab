@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b792214615ac4bc6893f59073fea28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 0
+  inputType: 2
   up: {fileID: 0}
   down: {fileID: 0}
   left: {fileID: 0}
@@ -415,6 +415,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4186084799242934207}
     m_Modifications:
+    - target: {fileID: 2171360765964150746, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
+        type: 3}
+      propertyPath: inputType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2171360765964150746, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -726,8 +731,62 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7296034971045230287, guid: dd45fb4cca703476aa0f1da48659ab2d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8934424014503244662}
   m_SourcePrefab: {fileID: 100100000, guid: dd45fb4cca703476aa0f1da48659ab2d, type: 3}
+--- !u!1 &1695331192067057088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7296034971045230287, guid: dd45fb4cca703476aa0f1da48659ab2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8270789912227320591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8934424014503244662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695331192067057088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b792214615ac4bc6893f59073fea28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputType: 1
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4572639611736158044}
+        m_TargetAssemblyTypeName: SettingToggle, Assembly-CSharp
+        m_MethodName: IncrementWithWrap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnfocus:
+    m_PersistentCalls:
+      m_Calls: []
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  focusedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  disabledOpacity: 0.5
+  text:
+  - {fileID: 5143453317466585084}
+  menuScreen: {fileID: 0}
 --- !u!224 &2913214213452079987 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6533156799118291068, guid: dd45fb4cca703476aa0f1da48659ab2d,
@@ -740,7 +799,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8270789912227320591}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1695331192067057088}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b2622cfdb9f04188bb1af66f8142ae5, type: 3}
@@ -754,6 +813,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4186084799242934207}
     m_Modifications:
+    - target: {fileID: 2171360765964150746, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
+        type: 3}
+      propertyPath: inputType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2171360765964150746, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
