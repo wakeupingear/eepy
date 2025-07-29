@@ -37,4 +37,4 @@ jobs:
             - name: Upload to GitHub Release
               uses: softprops/action-gh-release@v2
               with:
-                  files: Build/ExampleProject.unitypackage
+                  files: ExampleProject/Build/Package.unitypackage
