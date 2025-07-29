@@ -68,6 +68,7 @@ public class MenuScreen : MonoBehaviour
         if (autoLink != AutoLinkDirection.None)
         {
             List<MenuButton> autoLinkedButtons = Util.GetComponentsInChildrenConditional<MenuButton>(layoutGroup.transform);
+            autoLinkedButtons = autoLinkedButtons.Where(button => button.inputType != MenuButton.InputType.Mouse).ToList();
             if (autoLinkedButtons.Count > 0)
             {
                 if (autoLink == AutoLinkDirection.Vertical)

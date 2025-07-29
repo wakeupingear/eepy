@@ -183,8 +183,18 @@ public class SettingToggle : MenuInput
             currentOption--;
             UpdateSetting(-1);
         }
+    }
+
+    public void DecrementWithWrap()
+    {
+        if (CanDecrement())
+        {
+            Decrement();
+        }
         else
         {
+            currentOption = options.Count - 1;
+            UpdateSetting(-1);
         }
     }
 
@@ -211,7 +221,9 @@ public class SettingToggle : MenuInput
         if (currentOptionSafe.universalLabel != null && currentOptionSafe.universalLabel != "")
         {
             newText = currentOptionSafe.universalLabel;
-        } else {
+        } 
+        else 
+        {
             newLocalizationKey = currentOptionSafe.localizationKey;
         }
 
@@ -254,15 +266,8 @@ public class SettingToggle : MenuInput
         {
             if (!groupButton.isDisabled)
             {
-                if (incButton != null)
-                {
-                    bool canInc = CanIncrement();
-                    incButton.SetDisabled(!canInc);
-                }
-                if (decButton != null)
-                {
-                    decButton.SetDisabled(!CanDecrement());
-                }
+                incButton.SetDisabled(!CanIncrement());
+                decButton.SetDisabled(!CanDecrement());
             }
             else
             {
