@@ -6,7 +6,7 @@ on:
             - dev
         paths:
             - '.github/workflows/deploy-demo.yml'
-            - 'ExampleProject/**'
+            - 'ExampleProject/Assets/Package/**'
 
 env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
