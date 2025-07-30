@@ -4,6 +4,9 @@ on:
     push:
         branches:
             - dev
+        paths:
+            - '.github/workflows/deploy-demo.yml'
+            - 'EepyDemoProject/Assets/Package/**'
 
 env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -16,13 +19,11 @@ jobs:
         name: Build Demo Project
         runs-on: ubuntu-latest
         steps:
-            # Checkout repository
             - name: Checkout code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   lfs: true
 
-            # Cache Library folder
             - name: Cache Library
               uses: actions/cache@v3
               with:
@@ -30,7 +31,6 @@ jobs:
                   key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
                   restore-keys: Library-
 
-            # Build WebGL
             - name: Unity - Builder
               uses: game-ci/unity-builder@v4
               env:
@@ -38,12 +38,12 @@ jobs:
                   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
               with:
                   targetPlatform: WebGL
-                  buildName: Build
+                  buildName: WebBuild
+                  projectPath: EepyDemoProject
 
-            # Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   branch: gh-pages
-                  folder: build/WebGL/Build
+                  folder: build/WebGL/WebBuild
                   clean: true

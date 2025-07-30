@@ -1,0 +1,85 @@
+name: Sync Unity Folders to Main
+
+on:
+    push:
+        branches:
+            - dev
+        paths:
+            - '.github/workflows/sync-library-files.yml'
+            - 'EepyDemoProject/Assets/Package/**'
+
+jobs:
+    sync-folders:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout dev branch
+              uses: actions/checkout@v4
+              with:
+                  ref: dev
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  fetch-depth: 0
+
+            - name: Configure Git
+              run: |
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+            - name: Switch to main branch
+              run: |
+                  git checkout main
+                  git pull origin main
+
+            - name: Copy Unity folders from dev
+              run: |
+                  # Remove existing folders in root if they exist
+                  sudo rm -rf Assets/
+
+                  # Check out folders
+                  git checkout dev -- EepyDemoProject/
+                  git checkout dev -- README.md
+                  git checkout dev -- CHANGELOG.md
+                  git checkout dev -- LICENSE.md
+                  git checkout dev -- .gitignore
+                  git checkout dev -- .github/
+                  git checkout dev -- .vscode/
+
+                  # Create destination directories
+                  mkdir -p Assets/Scripts/
+                  mkdir -p Assets/Editor/
+
+                  # Move the folders to root, excluding .meta files
+                  if [ -d "EepyDemoProject/Assets/Package/Scripts" ]; then
+                    find EepyDemoProject/Assets/Package/Scripts/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
+                  fi
+
+                  if [ -d "EepyDemoProject/Assets/Package/Resources" ]; then
+                    find EepyDemoProject/Assets/Package/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
+                  fi
+
+                  if [ -d "EepyDemoProject/Assets/Package/Editor" ]; then
+                    find EepyDemoProject/Assets/Package/Editor/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
+                  fi
+
+            - name: Add all files
+              run: |
+                  git add .
+
+            - name: Check for changes
+              id: check_changes
+              run: |
+                  if [ -n "$(git status --porcelain)" ]; then
+                    echo "changes=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "changes=false" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Commit and push changes
+              if: steps.check_changes.outputs.changes == 'true'
+              run: |
+                  git commit -m "bot-chore: sync library files from dev"
+                  git push origin main
+
+            - name: No changes detected
+              if: steps.check_changes.outputs.changes == 'false'
+              run: echo "No changes to sync from dev branch"

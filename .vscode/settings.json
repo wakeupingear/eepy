@@ -34,7 +34,6 @@
         "**/*.MA": true,
         "**/*.obj": true,
         "**/*.OBJ": true,
-        "**/*.asset": true,
         "**/*.cubemap": true,
         "**/*.flare": true,
         "**/*.mat": true,
@@ -47,9 +46,8 @@
         "library/": true,
         "obj/": true,
         "Obj/": true,
-        "ProjectSettings/": true,
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ExampleProject.sln"
+    "dotnet.defaultSolution": "EepyDemoProject.sln"
 }
