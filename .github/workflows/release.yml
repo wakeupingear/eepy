@@ -17,14 +17,27 @@ jobs:
               uses: actions/checkout@v4
               with:
                   lfs: true
+                  fetch-depth: 0
 
+            - name: Check if this is the latest tag
+              id: check_latest_tag
+              run: |
+                  LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
+                  if [ "${{ github.ref_name }}" = "$LATEST_TAG" ]; then
+                    echo "is_latest=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "is_latest=false" >> $GITHUB_OUTPUT
+                  fi
+            
             - name: Extract changelog for this version
+              if: steps.check_latest_tag.outputs.is_latest == 'true'
               id: changelog
               run: |
                 VERSION=${GITHUB_REF##*/}  # e.g. "v1.0.0"
                 sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '$s/^## \[.*//; /^$/d' > current_changelog.md
 
             - name: Cache Library
+              if: steps.check_latest_tag.outputs.is_latest == 'true'
               uses: actions/cache@v3
               with:
                   path: Library
@@ -32,6 +45,7 @@ jobs:
                   restore-keys: Library-
 
             - name: Unity - Builder
+              if: steps.check_latest_tag.outputs.is_latest == 'true'
               uses: game-ci/unity-builder@v4
               env:
                   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
@@ -41,6 +55,7 @@ jobs:
                   projectPath: EepyDemoProject
 
             - name: Upload to GitHub Release
+              if: steps.check_latest_tag.outputs.is_latest == 'true'
               uses: softprops/action-gh-release@v2
               with:
                   files: EepyDemoProject/Build/Eepy.unitypackage
