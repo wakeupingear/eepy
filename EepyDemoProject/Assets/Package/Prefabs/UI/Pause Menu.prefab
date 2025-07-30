@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -431,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -828,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -1201,7 +1201,6 @@ MonoBehaviour:
   slideOffset: {x: 36, y: 0}
   startingButton: {fileID: 1631597772444129647}
   autoLink: 1
-  gameplayUI: {fileID: 0}
 --- !u!224 &4006214278946999606 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6102826893971609255, guid: 0fd08e19055ca4b48872ff0ece5d9d76,

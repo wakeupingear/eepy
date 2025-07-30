@@ -98,3 +98,5 @@ MonoBehaviour:
     value: "Tangenten anv\xE4nds redan"
   - key: rumble
     value: Vibration
+  - key: open_pause_menu
+    value: "ESC f\xF6r att \xF6ppna pausmenyn"

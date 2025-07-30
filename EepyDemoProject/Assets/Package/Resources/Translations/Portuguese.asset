@@ -98,3 +98,5 @@ MonoBehaviour:
     value: "Tecla J\xE1 Est\xE1 em Uso"
   - key: rumble
     value: "Vibra\xE7\xE3o"
+  - key: open_pause_menu
+    value: ESC para abrir o menu de pausa

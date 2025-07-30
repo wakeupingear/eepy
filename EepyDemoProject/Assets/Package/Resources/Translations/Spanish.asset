@@ -98,3 +98,5 @@ MonoBehaviour:
     value: "La Tecla Ya Est\xE1 en Uso"
   - key: rumble
     value: "Vibraci\xF3n"
+  - key: open_pause_menu
+    value: "ESC para abrir el men\xFA de pausa"

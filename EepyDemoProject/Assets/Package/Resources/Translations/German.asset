@@ -98,3 +98,5 @@ MonoBehaviour:
     value: Taste bereits belegt
   - key: rumble
     value: Vibration
+  - key: open_pause_menu
+    value: "ESC f\xFCr Pause-Men\xFC \xF6ffnen"

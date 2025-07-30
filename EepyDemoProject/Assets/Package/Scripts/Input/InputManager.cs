@@ -104,6 +104,19 @@ namespace Eepy
 
             return false;
         }
+        
+        // Returns the cumulative time the key has been held down
+        public static float GetKeyHoldTime(InputAction action, bool allowWhenInputManagerDisabled = false)
+        {
+            if ((isInputManagerEnabled || allowWhenInputManagerDisabled) && inputStatesMap.TryGetValue(action, out InputState state))
+            {
+                return state.totalHoldTime;
+            }
+
+            return 0f;
+        }
+
+        // Returns the state struct of the key
         public static InputState GetKeyState(InputAction action, bool allowWhenInputManagerDisabled = false)
         {
             if ((isInputManagerEnabled || allowWhenInputManagerDisabled) && inputStatesMap.TryGetValue(action, out InputState state))
@@ -114,6 +127,7 @@ namespace Eepy
             return null;
         }
 
+        // Used to press an input through code (ex: for button remapping)
         public static void QueueManualInput(InputAction action)
         {
             manualInputActions.Add(action);
@@ -330,6 +344,8 @@ namespace Eepy
                     state.pressedThisFrame = false;
                     state.numRepeatedPresses = 0;
                     state.nextInputTime = 0f;
+                    state.totalHoldTime = 0f;
+                    state.startTime = -1f;
                 }
             }
 
@@ -378,6 +394,10 @@ namespace Eepy
             public int numRepeatedPresses = 0;
             [HideInInspector]
             public float nextInputTime = 0f;
+            [HideInInspector]
+            public float totalHoldTime = 0f;
+            [HideInInspector]
+            public float startTime = -1f;
         }
 
         [SerializeField, Tooltip("Configure all InputAction behavior here.")]
@@ -784,6 +804,10 @@ namespace Eepy
 
                         inputState.pressedThisFrame = true;
                         inputState.numRepeatedPresses++;
+                        if (inputState.numRepeatedPresses == 1)
+                        {
+                            inputState.startTime = Time.unscaledTime;
+                        }
                     }
                     else
                     {
@@ -797,6 +821,7 @@ namespace Eepy
                     inputState.held = true;
                     inputState.releasedThisFrame = false;
                     simultaneousInputs++;
+                    inputState.totalHoldTime += Time.unscaledDeltaTime;
                 }
                 else if (inputState.held)
                 {
@@ -806,6 +831,8 @@ namespace Eepy
                     inputState.held = false;
                     inputState.numRepeatedPresses = 0;
                     inputState.nextInputTime = 0f;
+                    inputState.totalHoldTime = 0f;
+                    inputState.startTime = Time.unscaledTime;
                 }
             }
 
@@ -896,7 +923,7 @@ namespace Eepy
 
         public static List<InputState> GetInputStates()
         {
-            return Instance.inputConfigs.ToList();
+            return inputStatesMap.Values.ToList();
         }
 
         public static bool TryGetKeySprite(int key, out Sprite sprite)

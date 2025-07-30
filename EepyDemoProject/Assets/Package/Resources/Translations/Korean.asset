@@ -98,3 +98,5 @@ MonoBehaviour:
     value: "\uD0A4\uAC00 \uC774\uBBF8 \uC0AC\uC6A9 \uC911\uC785\uB2C8\uB2E4"
   - key: rumble
     value: "\uC9C4\uB3D9"
+  - key: open_pause_menu
+    value: "ESC\uB85C \uC77C\uC2DC\uC815\uC9C0 \uBA54\uB274\uB97C \uC5F4\uAE30"

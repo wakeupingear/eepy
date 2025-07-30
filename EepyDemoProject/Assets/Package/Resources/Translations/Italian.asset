@@ -98,3 +98,5 @@ MonoBehaviour:
     value: "Tasto Gi\xE0 in Uso"
   - key: rumble
     value: Vibrazione
+  - key: open_pause_menu
+    value: ESC per aprire il menu di pausa

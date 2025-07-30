@@ -98,3 +98,5 @@ MonoBehaviour:
     value: Key is Already in Use
   - key: rumble
     value: Rumble
+  - key: open_pause_menu
+    value: ESC to open the Pause Menu

@@ -98,3 +98,5 @@ MonoBehaviour:
     value: "Touche d\xE9j\xE0 utilis\xE9e"
   - key: rumble
     value: Vibration
+  - key: open_pause_menu
+    value: ESC pour ouvrir le menu pause
