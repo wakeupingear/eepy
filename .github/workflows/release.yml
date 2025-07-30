@@ -18,6 +18,12 @@ jobs:
               with:
                   lfs: true
 
+            - name: Extract changelog for this version
+              id: changelog
+              run: |
+                VERSION=${GITHUB_REF##*/}  # e.g. "v1.0.0"
+                sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '$s/^## \[.*//; /^$/d' > current_changelog.md
+
             - name: Cache Library
               uses: actions/cache@v3
               with:
@@ -38,3 +44,4 @@ jobs:
               uses: softprops/action-gh-release@v2
               with:
                   files: EepyDemoProject/Build/Eepy.unitypackage
+                  body_path: extracted_changelog.md
