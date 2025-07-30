@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: English
+  m_EditorClassIdentifier: 
+  languageCode: en
+  languageName: English
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
+  entries:
+  - key: language_name
+    value: English
+  - key: settings
+    value: Settings
+  - key: resume
+    value: Resume
+  - key: restart
+    value: Restart Puzzle
+  - key: quit
+    value: Quit
+  - key: display
+    value: Display Mode
+  - key: fullscreen
+    value: Fullscreen
+  - key: windowed
+    value: Windowed
+  - key: borderless
+    value: Borderless
+  - key: overallVolume
+    value: Overall Volume
+  - key: musicVolume
+    value: Music Volume
+  - key: sfxVolume
+    value: SFX Volume
+  - key: language
+    value: Language
+  - key: on
+    value: On
+  - key: off
+    value: Off
+  - key: vsync
+    value: VSync
+  - key: back
+    value: Back
+  - key: resolution
+    value: Resolution
+  - key: controls
+    value: Controls
+  - key: left
+    value: Left
+  - key: right
+    value: Right
+  - key: up
+    value: Up
+  - key: down
+    value: Down
+  - key: pause
+    value: Pause
+  - key: interact
+    value: Interact
+  - key: add_keybinding
+    value: Add New Binding
+  - key: adding_keybinding
+    value: Press Any Unused Key
+  - key: keybindings
+    value: Key Bindings
+  - key: quit_confirm
+    value: Really Quit?
+  - key: yes
+    value: Yes
+  - key: no
+    value: No
+  - key: remove_keybinding
+    value: Remove
+  - key: reset_all
+    value: Reset All
+  - key: reset_all_confirm
+    value: Really Reset?
+  - key: manage_save
+    value: Load a Game
+  - key: save
+    value: Save
+  - key: empty
+    value: Empty
+  - key: remove_save_confirm
+    value: Remove Save?
+  - key: cancel
+    value: Cancel
+  - key: invalid_keybinding
+    value: Key is Already in Use
+  - key: rumble
+    value: Rumble
+  - key: open_pause_menu
+    value: ESC to open the Pause Menu

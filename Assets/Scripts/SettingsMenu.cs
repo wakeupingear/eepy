@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettingsMenu : MenuScreen
+namespace Eepy
 {
-    [SerializeField]
-    private Text resolutionText, languageText;
-
-    // Sync text on Focus 
-    protected override void OnFocused()
+    public class SettingsMenu : MenuScreen
     {
-        base.OnFocused();
+        [SerializeField]
+        private Text resolutionText, languageText;
 
-        resolutionText.SetText(SettingsManager.resolution, LocalizationManager.GetCurrentFont());
-        languageText.SetText(LocalizationManager.GetCurrentLanguageName(), LocalizationManager.GetCurrentFont());
-    }
+        // Sync text on Focus 
+        protected override void OnFocused()
+        {
+            base.OnFocused();
 
-    public void OpenResolutionMenu()
-    {
-        GameplayUI.Instance.OpenMenu(GameplayUI.Instance.resolutionMenu);
-    }
+            resolutionText.SetText(SettingsManager.resolution, LocalizationManager.GetCurrentFont());
+            languageText.SetText(LocalizationManager.GetCurrentLanguageName(), LocalizationManager.GetCurrentFont());
+        }
 
-    public void OpenLanguageMenu()
-    {
-        GameplayUI.Instance.OpenMenu(GameplayUI.Instance.languageMenu);
+        public void OpenResolutionMenu()
+        {
+            GameplayUI.OpenMenu(GameplayUI.resolutionMenu);
+        }
+
+        public void OpenLanguageMenu()
+        {
+            GameplayUI.OpenMenu(GameplayUI.languageMenu);
+        }
     }
-}
+};

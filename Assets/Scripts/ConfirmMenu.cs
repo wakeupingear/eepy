@@ -4,26 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ConfirmMenu : MenuScreen
+namespace Eepy
 {
-    [SerializeField]
-    private Text title;
-    [SerializeField]
-    private MenuButton confirmButton;
-
-    public void SetTitleLocalizationKeyAndAction(string key, UnityAction onConfirm)
+    public class ConfirmMenu : MenuScreen
     {
-        title.SetLocalizationKey(key);
+        [SerializeField]
+        private Text title;
+        [SerializeField]
+        private MenuButton confirmButton;
 
-        confirmButton.OnClick.RemoveAllListeners();
-        confirmButton.OnClick.AddListener(onConfirm);
+        public void SetTitleLocalizationKeyAndAction(string key, UnityAction onConfirm)
+        {
+            title.SetLocalizationKey(key);
+
+            confirmButton.OnClick.RemoveAllListeners();
+            confirmButton.OnClick.AddListener(onConfirm);
+        }
+
+        public void SetTitleTextAndAction(string text, UnityAction onConfirm)
+        {
+            title.SetText(text);
+
+            confirmButton.OnClick.RemoveAllListeners();
+            confirmButton.OnClick.AddListener(onConfirm);
+        }
     }
-
-    public void SetTitleTextAndAction(string text, UnityAction onConfirm)
-    {
-        title.SetText(text);
-
-        confirmButton.OnClick.RemoveAllListeners();
-        confirmButton.OnClick.AddListener(onConfirm);
-    }
-}
+};

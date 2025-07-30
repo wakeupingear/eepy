@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MenuScreen
+namespace Eepy
 {
-    public void OpenControlsMenu()
+    public class PauseMenu : MenuScreen
     {
-        GameplayUI.Instance.OpenMenu(GameplayUI.Instance.controlsMenu);
-    }
-    
-    public void OpenSettingsMenu()
-    {
-        GameplayUI.Instance.OpenMenu(GameplayUI.Instance.settingsMenu);
-    }
-
-    public void OpenQuitMenu()
-    {
-        GameplayUI.Instance.confirmMenu.SetTitleLocalizationKeyAndAction("quit_confirm", () =>
+        public void OpenControlsMenu()
         {
-            QuitGame();
-        });
-        GameplayUI.Instance.OpenMenu(GameplayUI.Instance.confirmMenu);
-    }
+            GameplayUI.OpenMenu(GameplayUI.controlsMenu);
+        }
+        
+        public void OpenSettingsMenu()
+        {
+            GameplayUI.OpenMenu(GameplayUI.settingsMenu);
+        }
 
-    private void QuitGame()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        public void OpenQuitMenu()
+        {
+            GameplayUI.confirmMenu.SetTitleLocalizationKeyAndAction("quit_confirm", () =>
+            {
+                QuitGame();
+            });
+            GameplayUI.OpenMenu(GameplayUI.confirmMenu);
+        }
+
+        private void QuitGame()
+        {
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+    #else
+            Application.Quit();
+    #endif
+        }
     }
-}
+};

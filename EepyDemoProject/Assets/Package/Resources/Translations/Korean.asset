@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: Korean
+  m_EditorClassIdentifier: 
+  languageCode: ko
+  languageName: "\uD55C\uAD6D\uC778"
+  font: {fileID: 11400000, guid: e14767a7067fe49ef912bf240a6ae9cb, type: 2}
+  entries:
+  - key: language_name
+    value: "\uD55C\uAD6D\uC778"
+  - key: settings
+    value: "\uC124\uC815"
+  - key: resume
+    value: "\uC7AC\uAC1C"
+  - key: restart
+    value: "\uD37C\uC990 \uC7AC\uC2DC\uC791"
+  - key: quit
+    value: "\uC885\uB8CC"
+  - key: display
+    value: "\uB514\uC2A4\uD50C\uB808\uC774 \uBAA8\uB4DC"
+  - key: fullscreen
+    value: "\uC804\uCCB4 \uD654\uBA74"
+  - key: windowed
+    value: "\uCC3D \uBAA8\uB4DC"
+  - key: borderless
+    value: "\uD14C\uB450\uB9AC \uC5C6\uC74C"
+  - key: overallVolume
+    value: "\uC804\uCCB4 \uBCFC\uB968"
+  - key: musicVolume
+    value: "\uC74C\uC545 \uBCFC\uB968"
+  - key: sfxVolume
+    value: "\uD6A8\uACFC\uC74C \uBCFC\uB968"
+  - key: language
+    value: "\uC5B8\uC5B4"
+  - key: on
+    value: "\uCF1C\uAE30"
+  - key: off
+    value: "\uB044\uAE30"
+  - key: vsync
+    value: "\uC218\uC9C1 \uB3D9\uAE30\uD654"
+  - key: back
+    value: "\uB4A4\uB85C"
+  - key: resolution
+    value: "\uD574\uC0C1\uB3C4"
+  - key: controls
+    value: "\uC870\uC791"
+  - key: left
+    value: "\uC88C"
+  - key: right
+    value: "\uC6B0"
+  - key: up
+    value: "\uC704"
+  - key: down
+    value: "\uC544\uB798"
+  - key: pause
+    value: "\uC77C\uC2DC\uC815\uC9C0"
+  - key: interact
+    value: "\uC0C1\uD638\uC791\uC6A9"
+  - key: add_keybinding
+    value: "\uC0C8 \uBC14\uC778\uB529 \uCD94\uAC00"
+  - key: adding_keybinding
+    value: "\uC0AC\uC6A9\uD558\uC9C0 \uC54A\uB294 \uD0A4\uB97C \uB20C\uB7EC\uC8FC\uC138\uC694"
+  - key: keybindings
+    value: "\uD0A4 \uBC14\uC778\uB529"
+  - key: quit_confirm
+    value: "\uC815\uB9D0 \uC885\uB8CC\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+  - key: yes
+    value: "\uC608"
+  - key: no
+    value: "\uC544\uB2C8\uC694"
+  - key: remove_keybinding
+    value: "\uC81C\uAC70"
+  - key: reset_all
+    value: "\uBAA8\uB450 \uCD08\uAE30\uD654"
+  - key: reset_all_confirm
+    value: "\uC815\uB9D0 \uCD08\uAE30\uD654\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+  - key: manage_save
+    value: "\uAC8C\uC784 \uBD88\uB7EC\uC624\uAE30"
+  - key: save
+    value: "\uC800\uC7A5"
+  - key: empty
+    value: "\uBE44\uC5B4\uC788\uC74C"
+  - key: remove_save_confirm
+    value: "\uC800\uC7A5 \uD30C\uC77C\uC744 \uC0AD\uC81C\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+  - key: cancel
+    value: "\uCDE8\uC18C"
+  - key: invalid_keybinding
+    value: "\uD0A4\uAC00 \uC774\uBBF8 \uC0AC\uC6A9 \uC911\uC785\uB2C8\uB2E4"
+  - key: rumble
+    value: "\uC9C4\uB3D9"
+  - key: open_pause_menu
+    value: "ESC\uB85C \uC77C\uC2DC\uC815\uC9C0 \uBA54\uB274\uB97C \uC5F4\uAE30"

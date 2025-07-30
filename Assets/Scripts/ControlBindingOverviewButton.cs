@@ -3,93 +3,96 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControlBindingOverviewButton : MonoBehaviour
+namespace Eepy
 {
-    [SerializeField]
-    private MenuButton button;
-    [SerializeField]
-    private GameObject inputIconPrefab;
-    [SerializeField]
-    private HorizontalLayoutGroup layoutGroup;
-    [SerializeField]
-    private string keybindingsKey = "keybindings";
-    [SerializeField]
-    private Text title;
-
-    public InputAction inputAction { get; private set; }
-
-    private struct BindingImage
+    public class ControlBindingOverviewButton : MonoBehaviour
     {
-        public InputIcon icon;
-        public int code;
-    }
-    private List<BindingImage> bindingImages = new List<BindingImage>();
+        [SerializeField]
+        private MenuButton button;
+        [SerializeField]
+        private GameObject inputIconPrefab;
+        [SerializeField]
+        private HorizontalLayoutGroup layoutGroup;
+        [SerializeField]
+        private string keybindingsKey = "keybindings";
+        [SerializeField]
+        private Text title;
 
-    private void Awake()
-    {
-        InputManager.OnInputActionsChanged += OnInputActionsChanged;
-    }
+        public InputAction inputAction { get; private set; }
 
-    private void OnDestroy()
-    {
-        InputManager.OnInputActionsChanged -= OnInputActionsChanged;
-    }
-
-    private void OnInputActionsChanged(List<InputAction> actions)
-    {
-        if (actions.Contains(inputAction))
+        private struct BindingImage
         {
+            public InputIcon icon;
+            public int code;
+        }
+        private List<BindingImage> bindingImages = new List<BindingImage>();
+
+        private void Awake()
+        {
+            InputManager.OnInputActionsChanged += OnInputActionsChanged;
+        }
+
+        private void OnDestroy()
+        {
+            InputManager.OnInputActionsChanged -= OnInputActionsChanged;
+        }
+
+        private void OnInputActionsChanged(List<InputAction> actions)
+        {
+            if (actions.Contains(inputAction))
+            {
+                UpdateBindingImages();
+            }
+        }
+
+        public void SetInputAction(InputAction inputAction)
+        {
+            this.inputAction = inputAction;
+
+            title.SetLocalizationKey(inputAction.ToString().ToLower());
+            button.OnClick.AddListener(() =>
+            {
+                GameplayUI.changeBindingMenu.SetTitle(title.text.text + " - " + LocalizationManager.Get(keybindingsKey), LocalizationManager.GetCurrentFont());
+                GameplayUI.changeBindingMenu.SetInputAction(inputAction);
+                GameplayUI.OpenMenu(GameplayUI.changeBindingMenu);
+            });
+
             UpdateBindingImages();
         }
-    }
 
-    public void SetInputAction(InputAction inputAction)
-    {
-        this.inputAction = inputAction;
-
-        title.SetLocalizationKey(inputAction.ToString().ToLower());
-        button.OnClick.AddListener(() =>
+        private void UpdateBindingImages()
         {
-            GameplayUI.Instance.changeBindingMenu.SetTitle(title.text.text + " - " + LocalizationManager.Get(keybindingsKey), LocalizationManager.GetCurrentFont());
-            GameplayUI.Instance.changeBindingMenu.SetInputAction(inputAction);
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.changeBindingMenu);
-        });
-
-        UpdateBindingImages();
-    }
-
-    private void UpdateBindingImages()
-    {
-        List<int> bindingCodes = InputManager.GetKeyBindings(inputAction);
-        while (bindingImages.Count < bindingCodes.Count)
-        {
-            var newImage = Instantiate(inputIconPrefab, layoutGroup.transform);
-            InputIcon icon = newImage.GetComponent<InputIcon>();
-            bindingImages.Add(new BindingImage { icon = icon, code = 0 });
-        }
-
-        for (int i = 0; i < bindingImages.Count; i++)
-        {
-            if (i < bindingCodes.Count)
+            List<int> bindingCodes = InputManager.GetKeyBindings(inputAction);
+            while (bindingImages.Count < bindingCodes.Count)
             {
-                bindingImages[i].icon.gameObject.SetActive(true);
-                bindingImages[i].icon.gameObject.name = "Code " + Util.FormatInputCode(bindingCodes[i]);
-                bindingImages[i].icon.SetCode(bindingCodes[i]);
-                if (bindingImages[i].code != bindingCodes[i])
+                var newImage = Instantiate(inputIconPrefab, layoutGroup.transform);
+                InputIcon icon = newImage.GetComponent<InputIcon>();
+                bindingImages.Add(new BindingImage { icon = icon, code = 0 });
+            }
+
+            for (int i = 0; i < bindingImages.Count; i++)
+            {
+                if (i < bindingCodes.Count)
                 {
-                    bindingImages[i] = new BindingImage { icon = bindingImages[i].icon, code = bindingCodes[i] };
+                    bindingImages[i].icon.gameObject.SetActive(true);
+                    bindingImages[i].icon.gameObject.name = "Code " + Util.FormatInputCode(bindingCodes[i]);
+                    bindingImages[i].icon.SetCode(bindingCodes[i]);
+                    if (bindingImages[i].code != bindingCodes[i])
+                    {
+                        bindingImages[i] = new BindingImage { icon = bindingImages[i].icon, code = bindingCodes[i] };
+                    }
+                }
+                else
+                {
+                    bindingImages[i].icon.gameObject.name = "Unused Binding " + i;
+                    bindingImages[i].icon.gameObject.SetActive(false);
                 }
             }
-            else
-            {
-                bindingImages[i].icon.gameObject.name = "Unused Binding " + i;
-                bindingImages[i].icon.gameObject.SetActive(false);
-            }
+        }
+
+        public MenuButton GetMenuButton()
+        {
+            return button;
         }
     }
-
-    public MenuButton GetMenuButton()
-    {
-        return button;
-    }
-}
+};

@@ -3,63 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Text : MonoBehaviour
+namespace Eepy
 {
-    public TMP_Text text;
-
-    [SerializeField]
-    private string localizationKey;
-    [SerializeField]
-    private bool useGlobalFont = true;
-
-    private void Awake()
+    public class Text : MonoBehaviour
     {
-        LocalizationManager.OnLanguageChanged += OnLanguageChanged;
-    }
+        public TMP_Text text;
 
-    private void OnDestroy()
-    {
-        LocalizationManager.OnLanguageChanged -= OnLanguageChanged;
-    }
-    
-    public void OnLanguageChanged(GameTranslation translation)
-    {
-        if (text != null && localizationKey != null && localizationKey != "" && LocalizationManager.IsLocalizationEnabled())
+        [SerializeField]
+        private string localizationKey;
+        [SerializeField]
+        private bool useGlobalFont = true;
+
+        private void Awake()
         {
-            text.text = LocalizationManager.Get(localizationKey);
+            LocalizationManager.OnLanguageChanged += OnLanguageChanged;
         }
-        if (text != null && useGlobalFont)
+
+        private void OnDestroy()
         {
-            text.font = translation.font;
+            LocalizationManager.OnLanguageChanged -= OnLanguageChanged;
         }
-    }
-
-    public void SetText(string text)
-    {
-        this.text.text = text;
-    }
-    public void SetText(string text, TMP_FontAsset font)
-    {
-        this.text.text = text;
-        if (font != null)
+        
+        public void OnLanguageChanged(GameTranslation translation)
         {
-            this.text.font = font;
+            if (text != null && localizationKey != null && localizationKey != "" && LocalizationManager.IsLocalizationEnabled())
+            {
+                text.text = LocalizationManager.Get(localizationKey);
+            }
+            if (text != null && useGlobalFont)
+            {
+                text.font = translation.font;
+            }
+        }
+
+        public void SetText(string text)
+        {
+            this.text.text = text;
+        }
+        public void SetText(string text, TMP_FontAsset font)
+        {
+            this.text.text = text;
+            if (font != null)
+            {
+                this.text.font = font;
+            }
+        }
+
+        public string GetText()
+        {
+            return text.text;
+        }
+
+        public void SetLocalizationKey(string key)
+        {
+            localizationKey = key;
+            OnLanguageChanged(LocalizationManager.Instance.currentTranslation);
+        }
+
+        public void SetUnderline(bool underline)
+        {
+            Util.SetTextUnderline(text, underline);
         }
     }
-
-    public string GetText()
-    {
-        return text.text;
-    }
-
-    public void SetLocalizationKey(string key)
-    {
-        localizationKey = key;
-        OnLanguageChanged(LocalizationManager.Instance.currentTranslation);
-    }
-
-    public void SetUnderline(bool underline)
-    {
-        Util.SetTextUnderline(text, underline);
-    }
-}
+};

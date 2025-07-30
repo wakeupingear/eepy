@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: SimplifiedChinese
+  m_EditorClassIdentifier: 
+  languageCode: zh-CN
+  languageName: "\u4E2D\u6587\uFF08\u7B80\u4F53)"
+  font: {fileID: 11400000, guid: afeda34baf264414b8210cef8b32173e, type: 2}
+  entries:
+  - key: language_name
+    value: "\u4E2D\u6587\uFF08\u7B80\u4F53)"
+  - key: settings
+    value: "\u8BBE\u7F6E"
+  - key: resume
+    value: "\u6062\u590D"
+  - key: restart
+    value: "\u91CD\u65B0\u5F00\u59CB\u8C1C\u9898"
+  - key: quit
+    value: "\u9000\u51FA"
+  - key: display
+    value: "\u663E\u793A\u6A21\u5F0F"
+  - key: fullscreen
+    value: "\u5168\u5C4F"
+  - key: windowed
+    value: "\u7A97\u53E3"
+  - key: borderless
+    value: "\u65E0\u8FB9\u6846"
+  - key: overallVolume
+    value: "\u603B\u97F3\u91CF"
+  - key: musicVolume
+    value: "\u97F3\u4E50\u97F3\u91CF"
+  - key: sfxVolume
+    value: "\u97F3\u6548\u97F3\u91CF"
+  - key: language
+    value: "\u8BED\u8A00"
+  - key: on
+    value: "\u5F00"
+  - key: off
+    value: "\u5173"
+  - key: vsync
+    value: "\u5782\u76F4\u540C\u6B65"
+  - key: back
+    value: "\u8FD4\u56DE"
+  - key: resolution
+    value: "\u5206\u8FA8\u7387"
+  - key: controls
+    value: "\u63A7\u5236"
+  - key: left
+    value: "\u5DE6"
+  - key: right
+    value: "\u53F3"
+  - key: up
+    value: "\u4E0A"
+  - key: down
+    value: "\u4E0B"
+  - key: pause
+    value: "\u6682\u505C"
+  - key: interact
+    value: "\u4EA4\u4E92"
+  - key: add_keybinding
+    value: "\u6DFB\u52A0\u65B0\u7ED1\u5B9A"
+  - key: adding_keybinding
+    value: "\u6309\u4EFB\u610F\u672A\u4F7F\u7528\u7684\u952E"
+  - key: keybindings
+    value: "\u6309\u952E\u7ED1\u5B9A"
+  - key: quit_confirm
+    value: "\u771F\u7684\u8981\u9000\u51FA\u5417\uFF1F"
+  - key: yes
+    value: "\u662F"
+  - key: no
+    value: "\u5426"
+  - key: remove_keybinding
+    value: "\u79FB\u9664"
+  - key: reset_all
+    value: "\u91CD\u7F6E\u5168\u90E8"
+  - key: reset_all_confirm
+    value: "\u771F\u7684\u8981\u91CD\u7F6E\u5417\uFF1F"
+  - key: manage_save
+    value: "\u52A0\u8F7D\u6E38\u620F"
+  - key: save
+    value: "\u4FDD\u5B58"
+  - key: empty
+    value: "\u7A7A"
+  - key: remove_save_confirm
+    value: "\u79FB\u9664\u5B58\u6863\u5417\uFF1F"
+  - key: cancel
+    value: "\u53D6\u6D88"
+  - key: invalid_keybinding
+    value: "\u952E\u5DF2\u88AB\u4F7F\u7528"
+  - key: rumble
+    value: "\u9707\u52A8"
+  - key: open_pause_menu
+    value: "\u6309ESC\u6253\u5F00\u6682\u505C\u83DC\u5355"

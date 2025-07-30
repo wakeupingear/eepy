@@ -7,6 +7,7 @@ using UnityEngine;
 public class TranslationGeneratorWindow : EditorWindow
 {
     private string csvPath = "Assets/Editor/translations.csv";
+    private string outputFolder = "Assets/Resources/Translations/";
 
     [MenuItem("Window/Translation Generator")]
     private static void Init()
@@ -19,6 +20,8 @@ public class TranslationGeneratorWindow : EditorWindow
     {
 		GUILayout.Label($"Path to CSV file");
         csvPath = GUILayout.TextField(csvPath);
+		GUILayout.Label($"Output folder");
+        outputFolder = GUILayout.TextField(outputFolder);
         GUILayout.Space(10f);
         if (GUILayout.Button("Generate Translations"))
         {
@@ -80,7 +83,8 @@ public class TranslationGeneratorWindow : EditorWindow
 
         foreach (string language in allWords.Keys)
         {
-            string filePath = "Assets/Resources/Translations/" + language + ".txt";
+            string folder = outputFolder.EndsWith("/") || outputFolder.EndsWith("\\") ? outputFolder : outputFolder + "/";
+            string filePath = folder + language + ".txt";
             string content = string.Join(" ", allWords[language]);
             File.WriteAllText(filePath, content);
         }

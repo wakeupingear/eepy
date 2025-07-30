@@ -5,109 +5,174 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class GameplayUI : MonoBehaviour
+namespace Eepy
 {
-    public static GameplayUI Instance { get; private set; }
-
-    public static event Action OnGameplayUIClosed;
-
-    [SerializeField]
-    private Image menuBackground;
-    [SerializeField]
-    private float menuBackgroundDuration = 0.1f, menuBackgroundAlpha = 0.5f;
-
-    public PauseMenu pauseMenu;
-    public ControlsMenu controlsMenu;
-    public ChangeBindingMenu changeBindingMenu;
-    public SettingsMenu settingsMenu;
-    public ConfirmMenu confirmMenu;
-    public ResolutionMenu resolutionMenu;
-    public LanguageMenu languageMenu;
-
-    public List<InputAction> upActions, leftActions, downActions, rightActions, interactActions, backActions;
-    public List<InputAction> allFocusActions { get; private set; } = new List<InputAction>();
-
-    private List<MenuScreen> allMenuScreens = new List<MenuScreen>();
-    private Stack<MenuScreen> activeMenuScreens = new Stack<MenuScreen>();
-
-    private void Awake()
+    public class GameplayUI : MonoBehaviour
     {
-        if (Instance == null)
+        public static GameplayUI Instance { get; private set; }
+
+        public static event Action OnGameplayUIClosed;
+
+        [SerializeField]
+        private Image menuBackground;
+        [SerializeField]
+        private float menuBackgroundDuration = 0.1f, menuBackgroundAlpha = 0.5f;
+
+        public static PauseMenu pauseMenu
         {
-            Instance = this;
-            
-            allFocusActions.AddRange(upActions);
-            allFocusActions.AddRange(leftActions);
-            allFocusActions.AddRange(downActions);
-            allFocusActions.AddRange(rightActions);
-            allFocusActions.AddRange(interactActions);
-            allFocusActions.AddRange(backActions);
-        }
-    }
-    
-    private void OnDestroy()
-    {
-        if (Instance == this)
-        {
-            Instance = null;
-        }
-    }
-
-    public int GetActiveMenuScreenCount()
-    {
-        return activeMenuScreens.Count;
-    }
-
-    public void OpenMenu(MenuScreen screen)
-    {
-        if (screen != null)
-        {
-            if (activeMenuScreens.Count > 0)
+            get
             {
-                activeMenuScreens.Peek().OnCoveredUp();
-            }
-
-            screen.gameObject.SetActive(true);
-            activeMenuScreens.Push(screen);
-            screen.OnOpened();
-
-            StopAllCoroutines();
-            if (menuBackground.color.a < 1f)
-            {
-                StartCoroutine(Util.FadeImage(menuBackground, 0f, menuBackgroundAlpha, menuBackgroundDuration));
+                return Instance._pauseMenu;
             }
         }
-    }
+        [SerializeField]
+        private PauseMenu _pauseMenu;
 
-    public void CloseMenu()
-    {
-        if (activeMenuScreens.Count > 0)
+        public static ControlsMenu controlsMenu
         {
-            MenuScreen menuScreen = activeMenuScreens.Pop();
-            menuScreen.OnClosed();
-
-            if (activeMenuScreens.Count == 0)
+            get
             {
-                OnGameplayUIClosed?.Invoke();
-                CloseGameplayUI();
-            }
-            else
-            {
-                activeMenuScreens.Peek().OnReopened();
+                return Instance._controlsMenu;
             }
         }
-    }
+        [SerializeField]
+        private ControlsMenu _controlsMenu;
 
-    public void CloseGameplayUI()
-    {
-        while (activeMenuScreens.Count > 0)
+        public static ChangeBindingMenu changeBindingMenu
         {
-            CloseMenu();
+            get
+            {
+                return Instance._changeBindingMenu;
+            }
+        }
+        [SerializeField]
+        private ChangeBindingMenu _changeBindingMenu;
+
+        public static SettingsMenu settingsMenu
+        {
+            get
+            {
+                return Instance._settingsMenu;
+            }
+        }
+        [SerializeField]
+        private SettingsMenu _settingsMenu;
+
+        public static ConfirmMenu confirmMenu
+        {
+            get
+            {
+                return Instance._confirmMenu;
+            }
+        }
+        [SerializeField]
+        private ConfirmMenu _confirmMenu;
+
+        public static ResolutionMenu resolutionMenu
+        {
+            get
+            {
+                return Instance._resolutionMenu;
+            }
+        }
+        [SerializeField]
+        private ResolutionMenu _resolutionMenu;
+
+        public static LanguageMenu languageMenu
+        {
+            get
+            {
+                return Instance._languageMenu;
+            }
+        }
+        [SerializeField]
+        private LanguageMenu _languageMenu;
+
+        public List<InputAction> upActions, leftActions, downActions, rightActions, interactActions, backActions;
+        public List<InputAction> allFocusActions { get; private set; } = new List<InputAction>();
+
+        private List<MenuScreen> allMenuScreens = new List<MenuScreen>();
+        private Stack<MenuScreen> activeMenuScreens = new Stack<MenuScreen>();
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                
+                allFocusActions.AddRange(upActions);
+                allFocusActions.AddRange(leftActions);
+                allFocusActions.AddRange(downActions);
+                allFocusActions.AddRange(rightActions);
+                allFocusActions.AddRange(interactActions);
+                allFocusActions.AddRange(backActions);
+            }
+        }
+        
+        private void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                Instance = null;
+            }
         }
 
-        StopAllCoroutines();
-        StartCoroutine(Util.FadeImage(menuBackground, menuBackgroundAlpha, 0f, menuBackgroundDuration));
+        public int GetActiveMenuScreenCount()
+        {
+            return activeMenuScreens.Count;
+        }
 
-        GameManager.Instance.Unpause();
+        public static void OpenMenu(MenuScreen screen)
+        {
+            if (screen != null)
+            {
+                if (Instance.activeMenuScreens.Count > 0)
+                {
+                    Instance.activeMenuScreens.Peek().OnCoveredUp();
+                }
+
+                screen.gameObject.SetActive(true);
+                Instance.activeMenuScreens.Push(screen);
+                screen.OnOpened();
+
+                Instance.StopAllCoroutines();
+                if (Instance.menuBackground.color.a < 1f)
+                {
+                    Instance.StartCoroutine(Util.FadeImage(Instance.menuBackground, 0f, Instance.menuBackgroundAlpha, Instance.menuBackgroundDuration));
+                }
+            }
+        }
+
+        public static void CloseMenu()
+        {
+            if (Instance.activeMenuScreens.Count > 0)
+            {
+                MenuScreen menuScreen = Instance.activeMenuScreens.Pop();
+                menuScreen.OnClosed();
+
+                if (Instance.activeMenuScreens.Count == 0)
+                {
+                    OnGameplayUIClosed?.Invoke();
+                    CloseGameplayUI();
+                }
+                else
+                {
+                    Instance.activeMenuScreens.Peek().OnReopened();
+                }
+            }
+        }
+
+        public static void CloseGameplayUI()
+        {
+            while (Instance.activeMenuScreens.Count > 0)
+            {
+                CloseMenu();
+            }
+
+            Instance.StopAllCoroutines();
+            Instance.StartCoroutine(Util.FadeImage(Instance.menuBackground, Instance.menuBackgroundAlpha, 0f, Instance.menuBackgroundDuration));
+
+            GameManager.Instance.Unpause();
+        }
     }
-}
+};
