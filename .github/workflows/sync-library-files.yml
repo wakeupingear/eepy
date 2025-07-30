@@ -35,8 +35,14 @@ jobs:
                   # Remove existing folders in root if they exist
                   sudo rm -rf Assets/
 
-                  # Copy folders from EepyDemoProject to root
+                  # Check out folders
                   git checkout dev -- EepyDemoProject/
+                  git checkout dev -- README.md
+                  git checkout dev -- CHANGELOG.md
+                  git checkout dev -- LICENSE.md
+                  git checkout dev -- .gitignore
+                  git checkout dev -- .github/
+                  git checkout dev -- .vscode/
 
                   # Create destination directories
                   mkdir -p Assets/Scripts/
