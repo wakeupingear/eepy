@@ -32,9 +32,9 @@ jobs:
                   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
               with:
                   buildMethod: UnityBuilderAction.ExportPackage.Export
-                  projectPath: ExampleProject
+                  projectPath: EepyDemoProject
 
             - name: Upload to GitHub Release
               uses: softprops/action-gh-release@v2
               with:
-                  files: ExampleProject/Build/Package.unitypackage
+                  files: EepyDemoProject/Build/Eepy.unitypackage

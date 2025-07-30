@@ -2,7 +2,9 @@
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
+        "**/.vs": true,
         "**/.gitmodules": true,
+        "**/.vsconfig": true,
         "**/*.booproj": true,
         "**/*.pidb": true,
         "**/*.suo": true,
@@ -34,6 +36,7 @@
         "**/*.MA": true,
         "**/*.obj": true,
         "**/*.OBJ": true,
+        "**/*.asset": true,
         "**/*.cubemap": true,
         "**/*.flare": true,
         "**/*.mat": true,
@@ -46,6 +49,9 @@
         "library/": true,
         "obj/": true,
         "Obj/": true,
+        "Logs/": true,
+        "logs/": true,
+        "UserSettings/": true,
         "temp/": true,
         "Temp/": true
     },

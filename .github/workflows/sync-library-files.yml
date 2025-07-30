@@ -6,7 +6,7 @@ on:
             - dev
         paths:
             - '.github/workflows/sync-library-files.yml'
-            - 'ExampleProject/Assets/Package/**'
+            - 'EepyDemoProject/Assets/Package/**'
 
 jobs:
     sync-folders:
@@ -35,24 +35,24 @@ jobs:
                   # Remove existing folders in root if they exist
                   sudo rm -rf Assets/
 
-                  # Copy folders from ExampleProject to root
-                  git checkout dev -- ExampleProject/
+                  # Copy folders from EepyDemoProject to root
+                  git checkout dev -- EepyDemoProject/
 
                   # Create destination directories
                   mkdir -p Assets/Scripts/
                   mkdir -p Assets/Editor/
 
                   # Move the folders to root, excluding .meta files
-                  if [ -d "ExampleProject/Assets/Package/Scripts" ]; then
-                    find ExampleProject/Assets/Package/Scripts/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
+                  if [ -d "EepyDemoProject/Assets/Package/Scripts" ]; then
+                    find EepyDemoProject/Assets/Package/Scripts/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
                   fi
 
-                  if [ -d "ExampleProject/Assets/Package/Resources" ]; then
-                    find ExampleProject/Assets/Package/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
+                  if [ -d "EepyDemoProject/Assets/Package/Resources" ]; then
+                    find EepyDemoProject/Assets/Package/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
                   fi
 
-                  if [ -d "ExampleProject/Assets/Package/Editor" ]; then
-                    find ExampleProject/Assets/Package/Editor/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
+                  if [ -d "EepyDemoProject/Assets/Package/Editor" ]; then
+                    find EepyDemoProject/Assets/Package/Editor/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
                   fi
 
             - name: Add all files

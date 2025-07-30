@@ -1,4 +1,4 @@
-# Zepto
+# Eepy
 All the boilerplate you'll need for your Unity game. Opinionated, simple, and battle-tested on Steam.
 
 Featuring:
@@ -28,7 +28,7 @@ Featuring:
 
 ### 0. Prerequisites
 
-First, Zepto is an all-or-nothing solution. There is some dependency between scripts, as they were written as a system, not just as individual snippets. This is what lets it cover so many bases, but it makes it difficult to integrate into
+First, Eepy is an all-or-nothing solution. There is some dependency between scripts, as they were written as a system, not just as individual snippets. This is what lets it cover so many bases, but it makes it difficult to integrate into
 
 With that out of the way:
 * Use Unity 2021 or later
@@ -36,7 +36,7 @@ With that out of the way:
 * Install Text Mesh Pro
 * Don't use the New Input System
 
-### 1. Import the Zepto UnityPackage
+### 1. Import the Eepy UnityPackage
 
 ### 2. Set Script Prioritizes
 
