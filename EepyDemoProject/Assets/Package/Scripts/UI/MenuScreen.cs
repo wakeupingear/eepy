@@ -211,7 +211,7 @@ namespace Eepy
 
         public void CloseMenu()
         {
-            GameplayUI.Instance.CloseMenu();
+            GameplayUI.CloseMenu();
         }
 
         private IEnumerator HideAfterOneFrame()

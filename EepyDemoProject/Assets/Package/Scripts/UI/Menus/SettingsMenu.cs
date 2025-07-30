@@ -20,12 +20,12 @@ namespace Eepy
 
         public void OpenResolutionMenu()
         {
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.resolutionMenu);
+            GameplayUI.OpenMenu(GameplayUI.resolutionMenu);
         }
 
         public void OpenLanguageMenu()
         {
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.languageMenu);
+            GameplayUI.OpenMenu(GameplayUI.languageMenu);
         }
     }
 };

@@ -18,13 +18,75 @@ namespace Eepy
         [SerializeField]
         private float menuBackgroundDuration = 0.1f, menuBackgroundAlpha = 0.5f;
 
-        public PauseMenu pauseMenu;
-        public ControlsMenu controlsMenu;
-        public ChangeBindingMenu changeBindingMenu;
-        public SettingsMenu settingsMenu;
-        public ConfirmMenu confirmMenu;
-        public ResolutionMenu resolutionMenu;
-        public LanguageMenu languageMenu;
+        public static PauseMenu pauseMenu
+        {
+            get
+            {
+                return Instance._pauseMenu;
+            }
+        }
+        [SerializeField]
+        private PauseMenu _pauseMenu;
+
+        public static ControlsMenu controlsMenu
+        {
+            get
+            {
+                return Instance._controlsMenu;
+            }
+        }
+        [SerializeField]
+        private ControlsMenu _controlsMenu;
+
+        public static ChangeBindingMenu changeBindingMenu
+        {
+            get
+            {
+                return Instance._changeBindingMenu;
+            }
+        }
+        [SerializeField]
+        private ChangeBindingMenu _changeBindingMenu;
+
+        public static SettingsMenu settingsMenu
+        {
+            get
+            {
+                return Instance._settingsMenu;
+            }
+        }
+        [SerializeField]
+        private SettingsMenu _settingsMenu;
+
+        public static ConfirmMenu confirmMenu
+        {
+            get
+            {
+                return Instance._confirmMenu;
+            }
+        }
+        [SerializeField]
+        private ConfirmMenu _confirmMenu;
+
+        public static ResolutionMenu resolutionMenu
+        {
+            get
+            {
+                return Instance._resolutionMenu;
+            }
+        }
+        [SerializeField]
+        private ResolutionMenu _resolutionMenu;
+
+        public static LanguageMenu languageMenu
+        {
+            get
+            {
+                return Instance._languageMenu;
+            }
+        }
+        [SerializeField]
+        private LanguageMenu _languageMenu;
 
         public List<InputAction> upActions, leftActions, downActions, rightActions, interactActions, backActions;
         public List<InputAction> allFocusActions { get; private set; } = new List<InputAction>();
@@ -60,55 +122,55 @@ namespace Eepy
             return activeMenuScreens.Count;
         }
 
-        public void OpenMenu(MenuScreen screen)
+        public static void OpenMenu(MenuScreen screen)
         {
             if (screen != null)
             {
-                if (activeMenuScreens.Count > 0)
+                if (Instance.activeMenuScreens.Count > 0)
                 {
-                    activeMenuScreens.Peek().OnCoveredUp();
+                    Instance.activeMenuScreens.Peek().OnCoveredUp();
                 }
 
                 screen.gameObject.SetActive(true);
-                activeMenuScreens.Push(screen);
+                Instance.activeMenuScreens.Push(screen);
                 screen.OnOpened();
 
-                StopAllCoroutines();
-                if (menuBackground.color.a < 1f)
+                Instance.StopAllCoroutines();
+                if (Instance.menuBackground.color.a < 1f)
                 {
-                    StartCoroutine(Util.FadeImage(menuBackground, 0f, menuBackgroundAlpha, menuBackgroundDuration));
+                    Instance.StartCoroutine(Util.FadeImage(Instance.menuBackground, 0f, Instance.menuBackgroundAlpha, Instance.menuBackgroundDuration));
                 }
             }
         }
 
-        public void CloseMenu()
+        public static void CloseMenu()
         {
-            if (activeMenuScreens.Count > 0)
+            if (Instance.activeMenuScreens.Count > 0)
             {
-                MenuScreen menuScreen = activeMenuScreens.Pop();
+                MenuScreen menuScreen = Instance.activeMenuScreens.Pop();
                 menuScreen.OnClosed();
 
-                if (activeMenuScreens.Count == 0)
+                if (Instance.activeMenuScreens.Count == 0)
                 {
                     OnGameplayUIClosed?.Invoke();
                     CloseGameplayUI();
                 }
                 else
                 {
-                    activeMenuScreens.Peek().OnReopened();
+                    Instance.activeMenuScreens.Peek().OnReopened();
                 }
             }
         }
 
-        public void CloseGameplayUI()
+        public static void CloseGameplayUI()
         {
-            while (activeMenuScreens.Count > 0)
+            while (Instance.activeMenuScreens.Count > 0)
             {
                 CloseMenu();
             }
 
-            StopAllCoroutines();
-            StartCoroutine(Util.FadeImage(menuBackground, menuBackgroundAlpha, 0f, menuBackgroundDuration));
+            Instance.StopAllCoroutines();
+            Instance.StartCoroutine(Util.FadeImage(Instance.menuBackground, Instance.menuBackgroundAlpha, 0f, Instance.menuBackgroundDuration));
 
             GameManager.Instance.Unpause();
         }

@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         {
             isGamePaused = true;
             Time.timeScale = 0f;
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.pauseMenu);
+            GameplayUI.OpenMenu(GameplayUI.pauseMenu);
         }
     }
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         {
             isGamePaused = false;
             Time.timeScale = 1f;
-            GameplayUI.Instance.CloseGameplayUI();
+            GameplayUI.CloseGameplayUI();
         }
     }
 }

@@ -26,7 +26,6 @@ using System.Collections.Generic;
 [DisallowMultipleComponent]
 public class SteamManager : MonoBehaviour
 {
-    // Check to override the SteamID .txt file in the build folder
     public static event Action<bool> OnSteamOverlayChanged;
 
 #if !DISABLESTEAMWORKS

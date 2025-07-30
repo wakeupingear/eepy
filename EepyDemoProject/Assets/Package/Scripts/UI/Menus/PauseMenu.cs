@@ -8,21 +8,21 @@ namespace Eepy
     {
         public void OpenControlsMenu()
         {
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.controlsMenu);
+            GameplayUI.OpenMenu(GameplayUI.controlsMenu);
         }
         
         public void OpenSettingsMenu()
         {
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.settingsMenu);
+            GameplayUI.OpenMenu(GameplayUI.settingsMenu);
         }
 
         public void OpenQuitMenu()
         {
-            GameplayUI.Instance.confirmMenu.SetTitleLocalizationKeyAndAction("quit_confirm", () =>
+            GameplayUI.confirmMenu.SetTitleLocalizationKeyAndAction("quit_confirm", () =>
             {
                 QuitGame();
             });
-            GameplayUI.Instance.OpenMenu(GameplayUI.Instance.confirmMenu);
+            GameplayUI.OpenMenu(GameplayUI.confirmMenu);
         }
 
         private void QuitGame()

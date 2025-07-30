@@ -52,9 +52,9 @@ namespace Eepy
             title.SetLocalizationKey(inputAction.ToString().ToLower());
             button.OnClick.AddListener(() =>
             {
-                GameplayUI.Instance.changeBindingMenu.SetTitle(title.text.text + " - " + LocalizationManager.Get(keybindingsKey), LocalizationManager.GetCurrentFont());
-                GameplayUI.Instance.changeBindingMenu.SetInputAction(inputAction);
-                GameplayUI.Instance.OpenMenu(GameplayUI.Instance.changeBindingMenu);
+                GameplayUI.changeBindingMenu.SetTitle(title.text.text + " - " + LocalizationManager.Get(keybindingsKey), LocalizationManager.GetCurrentFont());
+                GameplayUI.changeBindingMenu.SetInputAction(inputAction);
+                GameplayUI.OpenMenu(GameplayUI.changeBindingMenu);
             });
 
             UpdateBindingImages();
