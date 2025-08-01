@@ -241,6 +241,28 @@ There are 4 overridable functions that are triggered at the start of the animati
 -   `OnClosed` - called when the menu is closed and popped off the top of the stack.
 -   `OnCoveredUp` - called when the menu, after being on the top of the stack, is covered up by another menu.
 
+### Multiplatform Build System
+
+This is a clone of Unity 6's [Build Profiles](https://docs.unity3d.com/6000.1/Documentation/Manual/build-profiles.html), but a bit better.
+
+#### How to Use
+
+1.  Open the Build Profiles window: `Window -> Build Profiles`.
+2.  Select one of the available profiles.
+3.  Click 'Build Selected Profile'.
+
+We include the following profiles out of the box:
+*   Windows - Standalone and Steam
+*   Mac - Standalone and Steam
+*   Linux - Standalone and Steam
+*   WebGL
+
+#### How it Works
+
+Each [Build Profile](/EepyDemoProject/Assets/Package/Editor/Build%20Tools/BuildProfile.cs) is stored as a Scriptable Object containing various fields about the target platform, as well as a list of [Build Defines](/EepyDemoProject/Assets/Package/Editor/Build%20Tools/BuildDefine.cs). Each Build Define is, itself, a Scriptable Object with a list of [scripting defines](https://docs.unity3d.com/6000.1/Documentation/Manual/custom-scripting-symbols.html). This lets you reuse groups of scripting defines (ex: the defines for all Steam targets) across multiple different platforms.
+
+NOTE: Xcode project generation is currently broken, so you'll need to use the normal Build Window for those use cases.
+
 ## Contributing
 
 We welcome contributions from the community!

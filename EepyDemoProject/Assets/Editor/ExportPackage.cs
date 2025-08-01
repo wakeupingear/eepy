@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
-using UnityEngine;
 
-namespace UnityBuilderAction
+namespace Eepy
 {
     public static class ExportPackage
     {

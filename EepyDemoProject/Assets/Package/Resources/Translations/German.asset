@@ -100,3 +100,7 @@ MonoBehaviour:
     value: Vibration
   - key: open_pause_menu
     value: "ESC f\xFCr Pause-Men\xFC \xF6ffnen"
+  - key: steam_enabled
+    value: Steam ist aktiviert
+  - key: steam_disabled
+    value: Steam ist deaktiviert

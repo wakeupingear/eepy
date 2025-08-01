@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e31e6756c5c47b3acba07113b3f39f, type: 3}
+  m_Name: Linux Standalone
+  m_EditorClassIdentifier: 
+  buildTarget: 24
+  buildTargetGroup: 1
+  outputFolder: Standalone/Linux
+  outputName: EepyDemoProject
+  defines:
+  - {fileID: 11400000, guid: 5c78cdf6a9d6e4116a71404331ef7d5b, type: 2}

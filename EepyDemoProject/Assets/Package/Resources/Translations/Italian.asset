@@ -100,3 +100,7 @@ MonoBehaviour:
     value: Vibrazione
   - key: open_pause_menu
     value: ESC per aprire il menu di pausa
+  - key: steam_enabled
+    value: "Steam \xE8 attivato"
+  - key: steam_disabled
+    value: "Steam \xE8 disattivato"

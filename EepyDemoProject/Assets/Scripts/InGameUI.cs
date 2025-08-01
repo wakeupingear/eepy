@@ -9,7 +9,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] 
     private CanvasGroup pauseCanvasGroup;
     [SerializeField]
-    private Text controlsText;
+    private Text topRightText;
     [SerializeField]
     private float pauseFadeDuration = 0.1f;
 
@@ -31,6 +31,13 @@ public class InGameUI : MonoBehaviour
             var orderedInputStates = inputStates.OrderBy(state => state.startTime);
 
             string text = "";
+#if !DISABLESTEAMWORKS
+            text += LocalizationManager.Get("steam_enabled");
+#else
+            text += LocalizationManager.Get("steam_disabled");
+#endif
+            text += "\n\n";
+
             foreach (InputManager.InputState inputState in orderedInputStates)
             {
                 float holdTime = InputManager.GetKeyHoldTime(inputState.action);
@@ -40,7 +47,7 @@ public class InGameUI : MonoBehaviour
                 }
             }
 
-            controlsText.SetText(text);
+            topRightText.SetText(text);
         }
     }
 }

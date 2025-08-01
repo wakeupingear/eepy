@@ -100,3 +100,7 @@ MonoBehaviour:
     value: "\u632F\u52D5"
   - key: open_pause_menu
     value: "ESC\u3067\u30DD\u30FC\u30BA\u30E1\u30CB\u30E5\u30FC\u3092\u958B\u304F"
+  - key: steam_enabled
+    value: "Steam\u304C\u6709\u52B9"
+  - key: steam_disabled
+    value: "Steam\u304C\u7121\u52B9"

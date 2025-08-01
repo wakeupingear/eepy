@@ -100,3 +100,7 @@ MonoBehaviour:
     value: "Vibraci\xF3n"
   - key: open_pause_menu
     value: "ESC para abrir el men\xFA de pausa"
+  - key: steam_enabled
+    value: "Steam est\xE1 habilitado"
+  - key: steam_disabled
+    value: "Steam est\xE1 deshabilitado"
