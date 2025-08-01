@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: Italian
+  m_EditorClassIdentifier: 
+  languageCode: it
+  languageName: Italiano
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
+  entries:
+  - key: language_name
+    value: Italiano
+  - key: settings
+    value: Impostazioni
+  - key: resume
+    value: Riprendi
+  - key: restart
+    value: Riavvia Puzzle
+  - key: quit
+    value: Esci
+  - key: display
+    value: "Modalit\xE0 Display"
+  - key: fullscreen
+    value: Intero
+  - key: windowed
+    value: Finestra
+  - key: borderless
+    value: Senza Bordi
+  - key: overallVolume
+    value: Volume Generale
+  - key: musicVolume
+    value: Musica
+  - key: sfxVolume
+    value: Effetti
+  - key: language
+    value: Lingua
+  - key: on
+    value: Att
+  - key: off
+    value: Dis
+  - key: vsync
+    value: VSync
+  - key: back
+    value: Indietro
+  - key: resolution
+    value: Risoluzione
+  - key: controls
+    value: Controlli
+  - key: left
+    value: Sinistra
+  - key: right
+    value: Destra
+  - key: up
+    value: Su
+  - key: down
+    value: "Gi\xF9"
+  - key: pause
+    value: Pausa
+  - key: interact
+    value: Interagisci
+  - key: add_keybinding
+    value: Aggiungi Nuovo Tasto
+  - key: adding_keybinding
+    value: Premi Qualsiasi Tasto Libero
+  - key: keybindings
+    value: Tasti Associati
+  - key: quit_confirm
+    value: Vuoi Davvero Uscire?
+  - key: yes
+    value: "S\xEC"
+  - key: no
+    value: No
+  - key: remove_keybinding
+    value: Rimuovi
+  - key: reset_all
+    value: Reimposta Tutto
+  - key: reset_all_confirm
+    value: Vuoi Davvero Resettare?
+  - key: manage_save
+    value: Carica Partita
+  - key: save
+    value: Salv
+  - key: empty
+    value: Vuoto
+  - key: remove_save_confirm
+    value: Eliminare Salvataggio?
+  - key: cancel
+    value: Annulla
+  - key: invalid_keybinding
+    value: "Tasto Gi\xE0 in Uso"
+  - key: rumble
+    value: Vibrazione
+  - key: open_pause_menu
+    value: ESC per aprire il menu di pausa
+  - key: steam_enabled
+    value: "Steam \xE8 attivato"
+  - key: steam_disabled
+    value: "Steam \xE8 disattivato"

@@ -23,7 +23,7 @@ namespace Eepy
             // Perform the export
             string[] assetPaths = options.TryGetValue("assetPaths", out string paths)
                 ? paths.Split(',')
-                : new string[] { "Assets/Package" };
+                : new string[] { "Assets/Eepy" };
 
             ExportPackageOptions exportOptions = ExportPackageOptions.Recurse;
             if (options.TryGetValue("includeLibraryAssets", out string includeLibrary) && includeLibrary.ToLower() == "true")

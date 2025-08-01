@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: Spanish
+  m_EditorClassIdentifier: 
+  languageCode: es
+  languageName: "Espa\xF1ol"
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
+  entries:
+  - key: language_name
+    value: "Espa\xF1ol"
+  - key: settings
+    value: "Configuraci\xF3n"
+  - key: resume
+    value: Reanudar
+  - key: restart
+    value: Reiniciar Puzles
+  - key: quit
+    value: Salir
+  - key: display
+    value: Modo de Pantalla
+  - key: fullscreen
+    value: Completa
+  - key: windowed
+    value: Ventana
+  - key: borderless
+    value: Sin Bordes
+  - key: overallVolume
+    value: Volumen General
+  - key: musicVolume
+    value: "Volumen de M\xFAsica"
+  - key: sfxVolume
+    value: Volumen de Efectos
+  - key: language
+    value: Idioma
+  - key: on
+    value: Act
+  - key: off
+    value: Des
+  - key: vsync
+    value: VSync
+  - key: back
+    value: Volver
+  - key: resolution
+    value: "Resoluci\xF3n"
+  - key: controls
+    value: Controles
+  - key: left
+    value: Izquierda
+  - key: right
+    value: Derecha
+  - key: up
+    value: Arriba
+  - key: down
+    value: Abajo
+  - key: pause
+    value: Pausa
+  - key: interact
+    value: Interactuar
+  - key: add_keybinding
+    value: "Agregar Nueva Asignaci\xF3n"
+  - key: adding_keybinding
+    value: Presiona Cualquier Tecla No Usada
+  - key: keybindings
+    value: Asignaciones de Teclas
+  - key: quit_confirm
+    value: "\xBFRealmente Salir?"
+  - key: yes
+    value: "S\xED"
+  - key: no
+    value: No
+  - key: remove_keybinding
+    value: Eliminar
+  - key: reset_all
+    value: Resetear Todo
+  - key: reset_all_confirm
+    value: "\xBFRealmente Resetear?"
+  - key: manage_save
+    value: Cargar Partida
+  - key: save
+    value: Guardar
+  - key: empty
+    value: "Vac\xEDo"
+  - key: remove_save_confirm
+    value: "\xBFEliminar Guardado?"
+  - key: cancel
+    value: Cancelar
+  - key: invalid_keybinding
+    value: "La Tecla Ya Est\xE1 en Uso"
+  - key: rumble
+    value: "Vibraci\xF3n"
+  - key: open_pause_menu
+    value: "ESC para abrir el men\xFA de pausa"
+  - key: steam_enabled
+    value: "Steam est\xE1 habilitado"
+  - key: steam_disabled
+    value: "Steam est\xE1 deshabilitado"

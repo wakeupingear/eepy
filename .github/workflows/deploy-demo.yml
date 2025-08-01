@@ -6,7 +6,7 @@ on:
             - dev
         paths:
             - '.github/workflows/deploy-demo.yml'
-            - 'EepyDemoProject/Assets/Package/**'
+            - 'EepyDemoProject/Assets/Eepy/**'
 
 env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}

@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade0e7433469a497b944a1496318da70, type: 3}
+  m_Name: French
+  m_EditorClassIdentifier: 
+  languageCode: fr
+  languageName: "Fran\xE7ais"
+  font: {fileID: 11400000, guid: bd1a624a367494fbe8ec3ffb5c840f1b, type: 2}
+  entries:
+  - key: language_name
+    value: "Fran\xE7ais"
+  - key: settings
+    value: "Param\xE8tres"
+  - key: resume
+    value: Reprendre
+  - key: restart
+    value: "Red\xE9marrer puzzle"
+  - key: quit
+    value: Quitter
+  - key: display
+    value: Mode d'affichage
+  - key: fullscreen
+    value: "Plein \xE9cran"
+  - key: windowed
+    value: "Fen\xEAtr\xE9"
+  - key: borderless
+    value: Sans bordure
+  - key: overallVolume
+    value: "Volume g\xE9n\xE9ral"
+  - key: musicVolume
+    value: Musique
+  - key: sfxVolume
+    value: Effets sonores
+  - key: language
+    value: Langue
+  - key: on
+    value: On
+  - key: off
+    value: Off
+  - key: vsync
+    value: VSync
+  - key: back
+    value: Retour
+  - key: resolution
+    value: "R\xE9solution"
+  - key: controls
+    value: "Contr\xF4les"
+  - key: left
+    value: Gauche
+  - key: right
+    value: Droite
+  - key: up
+    value: Haut
+  - key: down
+    value: Bas
+  - key: pause
+    value: Pause
+  - key: interact
+    value: Interagir
+  - key: add_keybinding
+    value: Ajouter nouvelle liaison
+  - key: adding_keybinding
+    value: Appuyez sur une touche libre
+  - key: keybindings
+    value: Liaisons de touches
+  - key: quit_confirm
+    value: Vraiment quitter ?
+  - key: yes
+    value: Oui
+  - key: no
+    value: Non
+  - key: remove_keybinding
+    value: Supprimer
+  - key: reset_all
+    value: "Tout r\xE9initialiser"
+  - key: reset_all_confirm
+    value: "Vraiment r\xE9initialiser ?"
+  - key: manage_save
+    value: Charger partie
+  - key: save
+    value: Fichier
+  - key: empty
+    value: Vide
+  - key: remove_save_confirm
+    value: Supprimer sauvegarde ?
+  - key: cancel
+    value: Annuler
+  - key: invalid_keybinding
+    value: "Touche d\xE9j\xE0 utilis\xE9e"
+  - key: rumble
+    value: Vibration
+  - key: open_pause_menu
+    value: ESC pour ouvrir le menu pause
+  - key: steam_enabled
+    value: "Steam est activ\xE9"
+  - key: steam_disabled
+    value: "Steam est d\xE9sactiv\xE9"

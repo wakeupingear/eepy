@@ -1,0 +1,45 @@
+key,en,zh-CN,zh-TW,ja,ko,es,ru,sv,pt,de,fr,it
+language_name,English,中文（简体),中文（繁體),日本語,한국인,Español,Русский,Svenska,Português,Deutsch,Français,Italiano
+settings,Settings,设置,設定,設定,설정,Configuración,Настройки,Inställningar,Configurações,Einstellungen,Paramètres,Impostazioni
+resume,Resume,恢复,繼續,再開,재개,Reanudar,Продолжить,Fortsätt,Continuar,Fortsetzen,Reprendre,Riprendi
+restart,Restart Puzzle,重新开始谜题,重新開始謎題,パズルをリスタート,퍼즐 재시작,Reiniciar Puzles,Перезапуск,Starta om pussel,Reiniciar Puzzle,Puzzle neustarten,Redémarrer puzzle,Riavvia Puzzle
+quit,Quit,退出,離開,終了,종료,Salir,Выйти,Avsluta,Sair,Beenden,Quitter,Esci
+display,Display Mode,显示模式,顯示模式,ディスプレイモード,디스플레이 모드,Modo de Pantalla,Режим экрана,Skärmläge,Modo de Exibição,Anzeigemodus,Mode d'affichage,Modalità Display
+fullscreen,Fullscreen,全屏,全螢幕,フルスクリーン,전체 화면,Completa,Полн. экр.,Helskärm,Tela Cheia,Vollbild,Plein écran,Intero
+windowed,Windowed,窗口,視窗,ウィンドウ,창 모드,Ventana,Оконный,Fönster,Janela,Fenster,Fenêtré,Finestra
+borderless,Borderless,无边框,無邊框,ボーダーレス,테두리 없음,Sin Bordes,Без рамки,Ramlös,Sem Bordas,Randlos,Sans bordure,Senza Bordi
+overallVolume,Overall Volume,总音量,總音量,全体音量,전체 볼륨,Volumen General,Общая громкость,Huvudvolym,Volume Geral,Gesamtlautstärke,Volume général,Volume Generale
+musicVolume,Music Volume,音乐音量,音樂音量,音楽音量,음악 볼륨,Volumen de Música,музыки,Musikvolym,Volume da Música,Musik,Musique,Musica
+sfxVolume,SFX Volume,音效音量,音效音量,効果音音量,효과음 볼륨,Volumen de Efectos,Эффекты,Ljudeffektsvolym,Volume de Efeitos,Effekte,Effets sonores,Effetti
+language,Language,语言,語言,言語,언어,Idioma,Язык,Språk,Idioma,Sprache,Langue,Lingua
+on,On,开,開,オン,켜기,Act,Вкл,På,Lig,Ein,On,Att
+off,Off,关,關,オフ,끄기,Des,Выкл,Av,Des,Aus,Off,Dis
+vsync,VSync,垂直同步,垂直同步,VSync,수직 동기화,VSync,VSync,VSync,VSync,VSync,VSync,VSync
+back,Back,返回,返回,戻る,뒤로,Volver,Назад,Tillbaka,Voltar,Zurück,Retour,Indietro
+resolution,Resolution,分辨率,解析度,解像度,해상도,Resolución,Разрешение,Upplösning,Resolução,Auflösung,Résolution,Risoluzione
+controls,Controls,控制,控制,コントロール,조작,Controles,Управление,Kontroller,Controles,Steuerung,Contrôles,Controlli
+left,Left,左,左,左,좌,Izquierda,Влево,Vänster,Esquerda,Links,Gauche,Sinistra
+right,Right,右,右,右,우,Derecha,Вправо,Höger,Direita,Rechts,Droite,Destra
+up,Up,上,上,上,위,Arriba,Вверх,Upp,Cima,Oben,Haut,Su
+down,Down,下,下,下,아래,Abajo,Вниз,Ner,Baixo,Unten,Bas,Giù
+pause,Pause,暂停,暫停,ポーズ,일시정지,Pausa,Пауза,Paus,Pausar,Pausieren,Pause,Pausa
+interact,Interact,交互,互動,インタラクト,상호작용,Interactuar,Взаимодействовать,Interagera,Interagir,Interagieren,Interagir,Interagisci
+add_keybinding,Add New Binding,添加新绑定,新增按鍵綁定,新しいバインドを追加,새 바인딩 추가,Agregar Nueva Asignación,Добавить привязку,Lägg till ny bindning,Adicionar Nova Atribuição,Neue Tastenbelegung,Ajouter nouvelle liaison,Aggiungi Nuovo Tasto
+adding_keybinding,Press Any Unused Key,按任意未使用的键,按任意未使用的按鍵,使用されていないキーを押してください,사용하지 않는 키를 눌러주세요,Presiona Cualquier Tecla No Usada,Нажмите любую неиспользуемую клавишу,Tryck på valfri oanvänd tangent,Pressione Qualquer Tecla Não Usada,Beliebige unbenutzte Taste drücken,Appuyez sur une touche libre,Premi Qualsiasi Tasto Libero
+keybindings,Key Bindings,按键绑定,按鍵綁定,キーバインド,키 바인딩,Asignaciones de Teclas,Привязки клавиш,Tangentbindningar,Atribuições de Teclas,Tastenbelegungen,Liaisons de touches,Tasti Associati
+quit_confirm,Really Quit?,真的要退出吗？,真的要離開嗎？,本当に終了しますか？,정말 종료하시겠습니까?,¿Realmente Salir?,Действительно выйти?,Verkligen avsluta?,Realmente Sair?,Wirklich beenden?,Vraiment quitter ?,Vuoi Davvero Uscire?
+yes,Yes,是,是,はい,예,Sí,Да,Ja,Sim,Ja,Oui,Sì
+no,No,否,否,いいえ,아니요,No,Нет,Nej,Não,Nein,Non,No
+remove_keybinding,Remove,移除,移除,削除,제거,Eliminar,Удалить,Ta bort,Remover,Entfernen,Supprimer,Rimuovi
+reset_all,Reset All,重置全部,重設全部,すべてリセット,모두 초기화,Resetear Todo,Сбросить всё,Återställ alla,Redefinir Tudo,Alle zurücksetzen,Tout réinitialiser,Reimposta Tutto
+reset_all_confirm,Really Reset?,真的要重置吗？,真的要重設嗎？,本当にリセットしますか？,정말 초기화하시겠습니까?,¿Realmente Resetear?,Действительно сбросить?,Verkligen återställa?,Realmente Redefinir?,Wirklich zurücksetzen?,Vraiment réinitialiser ?,Vuoi Davvero Resettare?
+manage_save,Load a Game,加载游戏,載入遊戲,ゲームをロード,게임 불러오기,Cargar Partida,Загрузить игру,Ladda spel,Carregar Jogo,Spiel laden,Charger partie,Carica Partita
+save,Save,保存,儲存,セーブ,저장,Guardar,Сейв,Spara,Arquivo,Datei,Fichier,Salv
+empty,Empty,空,空,空,비어있음,Vacío,Пусто,Tom,Vazio,Leer,Vide,Vuoto
+remove_save_confirm,Remove Save?,移除存档吗？,移除存檔嗎？,セーブを削除しますか？,저장 파일을 삭제하시겠습니까?,¿Eliminar Guardado?,Удалить cейв?,Ta bort sparfil?,Remover Arquivo?,Datei löschen?,Supprimer sauvegarde ?,Eliminare Salvataggio?
+cancel,Cancel,取消,取消,キャンセル,취소,Cancelar,Отмена,Avbryt,Cancelar,Abbrechen,Annuler,Annulla
+invalid_keybinding,Key is Already in Use,键已被使用,按鍵已被使用,キーは既に使用されています,키가 이미 사용 중입니다,La Tecla Ya Está en Uso,Клавиша уже используется,Tangenten används redan,Tecla Já Está em Uso,Taste bereits belegt,Touche déjà utilisée,Tasto Già in Uso
+rumble,Rumble,震动,震動,振動,진동,Vibración,Вибрация,Vibration,Vibração,Vibration,Vibration,Vibrazione
+open_pause_menu,ESC to open the Pause Menu,按ESC打开暂停菜单,按ESC打開暫停選單,ESCでポーズメニューを開く,ESC로 일시정지 메뉴를 열기,ESC para abrir el menú de pausa,ESC для открытия меню паузы,ESC för att öppna pausmenyn,ESC para abrir o menu de pausa,ESC für Pause-Menü öffnen,ESC pour ouvrir le menu pause,ESC per aprire il menu di pausa
+steam_enabled,Steam is Enabled,Steam已启用,Steam已啟用,Steamが有効,Steam이 활성화되어 있습니다,Steam está habilitado,Steam включен,Steam är aktiverat,Steam está habilitado,Steam ist aktiviert,Steam est activé,Steam è attivato
+steam_disabled,Steam is Disabled,Steam已禁用,Steam已禁用,Steamが無効,Steam이 비활성화되어 있습니다,Steam está deshabilitado,Steam отключен,Steam är inaktiverat,Steam está desabilitado,Steam ist deaktiviert,Steam est désactivé,Steam è disattivato

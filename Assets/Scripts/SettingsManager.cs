@@ -3,6 +3,7 @@ using System;
 
 namespace Eepy
 {
+    [DisallowMultipleComponent]
     public class SettingsManager : MonoBehaviour
     {
         public static SettingsManager Instance { get; private set; }

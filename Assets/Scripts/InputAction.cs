@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Eepy
 {
     // Modify this enum to add/remove input actions
