@@ -28,13 +28,6 @@ jobs:
                   else
                     echo "is_latest=false" >> $GITHUB_OUTPUT
                   fi
-            
-            - name: Extract changelog for this version
-              if: steps.check_latest_tag.outputs.is_latest == 'true'
-              id: changelog
-              run: |
-                VERSION=${GITHUB_REF##*/}  # e.g. "v1.0.0"
-                sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '$s/^## \[.*//; /^$/d' > extracted_changelog.md
 
             - name: Cache Library
               if: steps.check_latest_tag.outputs.is_latest == 'true'
@@ -53,6 +46,13 @@ jobs:
               with:
                   buildMethod: Eepy.ExportPackage.Export
                   projectPath: EepyDemoProject
+            
+            - name: Extract changelog for this version
+              if: steps.check_latest_tag.outputs.is_latest == 'true'
+              id: changelog
+              run: |
+                VERSION=${GITHUB_REF##*/}  # e.g. "v1.0.0"
+                sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '$s/^## \[.*//; /^$/d' > extracted_changelog.md
 
             - name: Upload to GitHub Release
               if: steps.check_latest_tag.outputs.is_latest == 'true'

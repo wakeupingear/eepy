@@ -109,8 +109,12 @@ namespace Eepy
                 }
                 else if (selectedProfile.Target == BuildTarget.StandaloneWindows64 || selectedProfile.Target == BuildTarget.StandaloneWindows)
                 {
+#if UNITY_STANDALONE_WIN
                     UnityEditor.WindowsStandalone.UserBuildSettings.createSolution = EditorGUILayout.Toggle("Create Visual Studio Solution", UnityEditor.WindowsStandalone.UserBuildSettings.createSolution);
                     UnityEditor.WindowsStandalone.UserBuildSettings.copyPDBFiles = EditorGUILayout.Toggle("Copy PDB Files", UnityEditor.WindowsStandalone.UserBuildSettings.copyPDBFiles);
+#else
+                    EditorGUILayout.HelpBox("Windows build settings are not available on this platform.", MessageType.Info);
+#endif
                 }
             }
 
@@ -185,10 +189,12 @@ namespace Eepy
                         EditorUserBuildSettings.exportAsGoogleAndroidProject = true;
                         break;
                     case BuildTarget.StandaloneOSX:
+#if UNITY_STANDALONE_OSX
                         if (UnityEditor.OSXStandalone.UserBuildSettings.createXcodeProject)
                         {
                             currentOptions |= BuildOptions.AcceptExternalModificationsToPlayer;
                         }
+#endif
                         break;
                     default:
                         break;
