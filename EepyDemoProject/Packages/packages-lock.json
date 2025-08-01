@@ -9,13 +9,6 @@
       },
       "hash": "38fecf55e4fd94ccfe58a92ed8ad1a529ba1694e"
     },
-    "com.rlabrecque.steamworks.net": {
-      "version": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net#2025.161.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "eb0f4beeb7af1188b475602269b253dd2ec4aaed"
-    },
     "com.unity.burst": {
       "version": "1.8.12",
       "depth": 1,

@@ -6,7 +6,7 @@ on:
             - dev
         paths:
             - '.github/workflows/sync-library-files.yml'
-            - 'EepyDemoProject/Assets/Package/**'
+            - 'EepyDemoProject/Assets/Eepy/**'
 
 jobs:
     sync-folders:
@@ -49,16 +49,16 @@ jobs:
                   mkdir -p Assets/Editor/
 
                   # Move the folders to root, excluding .meta files
-                  if [ -d "EepyDemoProject/Assets/Package/Scripts" ]; then
-                    find EepyDemoProject/Assets/Package/Scripts/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
+                  if [ -d "EepyDemoProject/Assets/Eepy/Scripts" ]; then
+                    find EepyDemoProject/Assets/Eepy/Scripts/ -type f ! -name "*.meta" -exec mv {} Assets/Scripts/ \;
                   fi
 
-                  if [ -d "EepyDemoProject/Assets/Package/Resources" ]; then
-                    find EepyDemoProject/Assets/Package/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
+                  if [ -d "EepyDemoProject/Assets/Eepy/Resources" ]; then
+                    find EepyDemoProject/Assets/Eepy/Resources/ -type f ! -name "*.meta" -exec mv {} Assets/Resources/ \;
                   fi
 
-                  if [ -d "EepyDemoProject/Assets/Package/Editor" ]; then
-                    find EepyDemoProject/Assets/Package/Editor/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
+                  if [ -d "EepyDemoProject/Assets/Eepy/Editor" ]; then
+                    find EepyDemoProject/Assets/Eepy/Editor/ -type f ! -name "*.meta" -exec mv {} Assets/Editor/ \;
                   fi
 
             - name: Add all files

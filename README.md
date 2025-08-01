@@ -61,13 +61,13 @@ Here's the basics. More comprehensive docs coming soon.
 
 All Manager objects are treated as Singletons, with most methods/variables being accessible through a static reference (ex: InputManager.GetKeyDown()).
 
-To set these up all at once, just add the [Singletons](EepyDemoProject/Assets/Package/Prefabs/Singletons.prefab) prefab to your scene.
+To set these up all at once, just add the [Singletons](EepyDemoProject/Assets/Eepy/Prefabs/Singletons.prefab) prefab to your scene.
 
-#### [InputManager](EepyDemoProject/Assets/Package/Scripts/Input/InputManager.cs)
+#### [InputManager](EepyDemoProject/Assets/Eepy/Scripts/Input/InputManager.cs)
 
 This polls all connected devices (keyboard and controllers) for inputs.
 
-The actual inputs are defined in the [InputAction](EepyDemoProject/Assets/Package/Scripts/Input/InputAction.cs) enum, and represent actions (ex: left, jump, etc) instead of specific key bindings. This is similar to the New Input System, but properly typesafe since it uses an enum. 
+The actual inputs are defined in the [InputAction](EepyDemoProject/Assets/Eepy/Scripts/Input/InputAction.cs) enum, and represent actions (ex: left, jump, etc) instead of specific key bindings. This is similar to the New Input System, but properly typesafe since it uses an enum. 
 
 You can check the actions with the following static functions:
 *   `InputManager.GetKey(InputAction)` - returns whether the action is being held.
@@ -83,7 +83,7 @@ InputManager also lets you set the following options for each InputAction in the
 
 InputManager also has various functions to track key bindings. Each action can have multiple bindings, which can be a mix of keyboard and controller keys. This is all abstracted away, so you don't have to worry about the details!
 
-#### [SettingsManager](EepyDemoProject/Assets/Package/Scripts/Settings/SettingsManager.cs)
+#### [SettingsManager](EepyDemoProject/Assets/Eepy/Scripts/Settings/SettingsManager.cs)
 
 This provides an interface into the game's settings. You can access the settings via a direct reference (ex: `SettingsManager.isVsyncEnabled`) or string/int reference (ex: `SettingsManager.GetString("VSync")`).
 
@@ -99,17 +99,17 @@ The following settings are included.
 
 You can subscribe to settings change events with the `SettingsManager.OnSettingsChanged` action. This will be broadcast whenever any setting changes.
 
-#### [Localization Manager](EepyDemoProject/Assets/Package/Scripts/Localization/LocalizationManager.cs)
+#### [Localization Manager](EepyDemoProject/Assets/Eepy/Scripts/Localization/LocalizationManager.cs)
 
 This handles the game's current translation. For most small games, you probably won't need this! Just set `isLocalizationEnabled` to `false` and you'll be all set.
 
 There's 2 ways to actually display localized text:
-* [Text Component](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Text.prefab) - this takes in a `localizationKey` that refers to a specific localized string, and saves it to the attached TextMeshPro Text.
+* [Text Component](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Text.prefab) - this takes in a `localizationKey` that refers to a specific localized string, and saves it to the attached TextMeshPro Text.
 * `LocalizationManager.Get(localizationKey)` - this lets you get the localized text in code.
 
 ##### Importing Translations
 
-The game's translations are stored as one big CSV (ex: this project's [translations.csv](EepyDemoProject/Assets/Package/Resources/translations.csv)). Each column is a language; each row is a specific translation entry, with a `localizationKey` as the first column.
+The game's translations are stored as one big CSV (ex: this project's [translations.csv](EepyDemoProject/Assets/Eepy/Resources/translations.csv)). Each column is a language; each row is a specific translation entry, with a `localizationKey` as the first column.
 
 **To save your changes, you'll need to manually regenerate the translation ScriptableObjects after editing the CSV.** This is easy to do:
 1.  Open the Translation Generator: `Window -> Translation Generator`.
@@ -123,7 +123,7 @@ The game's translations are stored as one big CSV (ex: this project's [translati
     *   Click 'Generate Font Alias'.
     *   Click 'Save'.
 
-#### [Steam Manager](EepyDemoProject/Assets/Package/Scripts/Steam/SteamManager.cs)
+#### [Steam Manager](EepyDemoProject/Assets/Eepy/Scripts/Steam/SteamManager.cs)
 
 This is an extended version of Steamworks.NET. We added the following helpers on top:
 *   `UnlockAchievement(id)` - unlock a specific achievement.
@@ -136,39 +136,39 @@ There's also an action - `OnSteamOverlayChanged` - that fires when the Steam ove
 
 ### UI System
 
-Eepy includes a basic UI system for all of your menu needs. To start, just add the [Gameplay UI Prefab](EepyDemoProject/Assets/Package/Prefabs/UI/Gameplay%20UI.prefab) to your scene. This contains a canvas and a script to manage all UI elements, as well as the following starter menus.
+Eepy includes a basic UI system for all of your menu needs. To start, just add the [Gameplay UI Prefab](EepyDemoProject/Assets/Eepy/Prefabs/UI/Gameplay%20UI.prefab) to your scene. This contains a canvas and a script to manage all UI elements, as well as the following starter menus.
 
 #### Starter Menus
 
 We include a group of prebuilt menus to handle common pause menu needs:
 
-##### [Pause Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Pause%20Menu.prefab) 
+##### [Pause Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Pause%20Menu.prefab) 
 
 The menu that opens when the player pauses the game. Think of this as a 'root menu' for all the other menus. Contains sublinks to the Settings and Controls menus.
 
-##### [Settings Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Settings%20Menu.prefab)
+##### [Settings Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Settings%20Menu.prefab)
 
 A menu with preconfigured settings toggles. Contains sublinks to the Resolution and Language menus.
 
-##### [Resolution Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Resolution%20Menu.prefab)
+##### [Resolution Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Resolution%20Menu.prefab)
 
 A menu that lets the player choose an available resolution. The actual resolution buttons are dynamically created at runtime based on the computer's display.
 
-##### [Controls Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Controls%20Menu.prefab)
+##### [Controls Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Controls%20Menu.prefab)
 
 A menu to view the key bindings for all `InputAction`s. The actual buttons are dynamically created at runtime. For inputs that are marked as rebindable in `InputManager`, the corresponding buttons are sublinks to the Change Binding Menu.
 
-##### [Change Binding Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Change%20Binding%20Menu.prefab)
+##### [Change Binding Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Change%20Binding%20Menu.prefab)
 
 A menu to add and remove key bindings for whichever action is set in the `inputAction` variable.
 
 In most cases, this should only be opened from the Controls Menu since its starting state (the `inputAction`) has to be set externally.
 
-##### [Language Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Language%20Menu.prefab)
+##### [Language Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Language%20Menu.prefab)
 
 A menu that lets the player choose an available language. The actual language buttons are dynamically created at runtime based on which languages are specified in `LocalizationManager`.
 
-##### [Confirm Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Confirm%20Menu.prefab)
+##### [Confirm Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Confirm%20Menu.prefab)
 
 A reusable menu to display a yes/no confirmation popup. 
 
@@ -178,25 +178,25 @@ Before opening the menu with `GameplayUI.OpenMenu`, you should first call either
 
 Under the hood, these are the building blocks to make more menu screens - simple and easily overridden.
 
-##### [Text](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Text.prefab)
+##### [Text](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Text.prefab)
 
 Text object with functions for setting the text directly or with a `localizationKey`.
 
 If localization is enabled, the font for this primitive is set to the active language's global font, which is necessary so that the text can display the right glyphs for a given language.
 
-##### [Title Text](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Title%20Text.prefab)
+##### [Title Text](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Title%20Text.prefab)
 
 Variant of the `Text` primitive with a larger font size.
 
-##### [Spacer](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Spacer.prefab)
+##### [Spacer](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Spacer.prefab)
 
 A constant sized spacer. Useful in horizontal/vertical layouts to provide consistent spacing between groups of items (ex: separate the title of a menu from the buttons).
 
-##### [Horizontal List](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Horizontal%20List.prefab) + [Vertical List](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Vertical%20List.prefab)
+##### [Horizontal List](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Horizontal%20List.prefab) + [Vertical List](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Vertical%20List.prefab)
 
 Centered lists with a constant sized gap.
 
-##### [Text Button](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Text%20Button.prefab)
+##### [Text Button](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Text%20Button.prefab)
 
 A Text Button that can be clicked, either by mouse or by a directional input. Buttons can be linked to each other so you can navigate between them with directional inputs.
 
@@ -205,17 +205,17 @@ They also emit three UnityEvent actions, which can be bound in both code or the 
 *   `OnFocus` - when the button is focused, either by a directional input or the mouse hover.
 *   `OnUnfocus` - when the button is unfocused.
 
-All of these functions are provided by the underlying [MenuButton](EepyDemoProject/Assets/Package/Scripts/UI/MenuButton.cs). This lets you make other buttons besides just Text Buttons, but we only ended up needing Text Buttons for our game.
+All of these functions are provided by the underlying [MenuButton](EepyDemoProject/Assets/Eepy/Scripts/UI/MenuButton.cs). This lets you make other buttons besides just Text Buttons, but we only ended up needing Text Buttons for our game.
 
-##### [Text Button](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Span%20Text%20Button.prefab)
+##### [Text Button](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Span%20Text%20Button.prefab)
 
 A wide variant of Text Button intended to span the full center width of a menu, with text on the left side and an empty slot on the right side. This is used in many places throughout the UI, like for the Setting Toggle.
 
-##### [Setting Toggle](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Setting%20Toggle.prefab)
+##### [Setting Toggle](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Setting%20Toggle.prefab)
 
 Animated slider toggle to change a value. This is configured to change a given setting and automatically subscribes to changes for that setting. The labels can be optionally localized or left as their original text.
 
-##### [Menu](EepyDemoProject/Assets/Package/Prefabs/UI/Primatives/Menu.prefab)
+##### [Menu](EepyDemoProject/Assets/Eepy/Prefabs/UI/Primatives/Menu.prefab)
 
 A template for a menu screen. The screen itself defaults to a full screen UI panel with a vertical list in the center, although this can all be changed.
 
@@ -223,7 +223,7 @@ To create a new menu, you can follow these steps:
 1.  Create a prefab variant of **Menu**.
 2.  Set up your buttons, text, and other UI elements.
 3.  Add the prefab variant as a child to the **Gameplay UI Prefab**, which will ensure that it's available in game.
-4.  (Optional but highly recommended) Create a new script that inherits from the [MenuScreen Script](EepyDemoProject/Assets/Package/Scripts/UI/MenuScreen.cs), then add a member variable of that new script type to the [GameplayUI Script](EepyDemoProject/Assets/Package/Scripts/UI/GameplayUI.cs) and assign it in the prefab.
+4.  (Optional but highly recommended) Create a new script that inherits from the [MenuScreen Script](EepyDemoProject/Assets/Eepy/Scripts/UI/MenuScreen.cs), then add a member variable of that new script type to the [GameplayUI Script](EepyDemoProject/Assets/Eepy/Scripts/UI/GameplayUI.cs) and assign it in the prefab.
     *   This is useful since it's likely that you'll want to add custom code to the menu, especially for button clicks. Creating a child of `MenuScreen` gives you access to some useful member variables and lets you run code when the menu is opened/closed
 
 This is part of a larger pattern that encourages you to break your UI up into discrete screens, which can be linked to each other in a stack. In code, you can call `GameplayUI.OpenMenu(screen)` to open a given screen.
@@ -259,7 +259,7 @@ We include the following profiles out of the box:
 
 #### How it Works
 
-Each [Build Profile](/EepyDemoProject/Assets/Package/Editor/Build%20Tools/BuildProfile.cs) is stored as a Scriptable Object containing various fields about the target platform, as well as a list of [Build Defines](/EepyDemoProject/Assets/Package/Editor/Build%20Tools/BuildDefine.cs). Each Build Define is, itself, a Scriptable Object with a list of [scripting defines](https://docs.unity3d.com/6000.1/Documentation/Manual/custom-scripting-symbols.html). This lets you reuse groups of scripting defines (ex: the defines for all Steam targets) across multiple different platforms.
+Each [Build Profile](/EepyDemoProject/Assets/Eepy/Editor/Build%20Tools/BuildProfile.cs) is stored as a Scriptable Object containing various fields about the target platform, as well as a list of [Build Defines](/EepyDemoProject/Assets/Eepy/Editor/Build%20Tools/BuildDefine.cs). Each Build Define is, itself, a Scriptable Object with a list of [scripting defines](https://docs.unity3d.com/6000.1/Documentation/Manual/custom-scripting-symbols.html). This lets you reuse groups of scripting defines (ex: the defines for all Steam targets) across multiple different platforms.
 
 NOTE: Xcode project generation is currently broken, so you'll need to use the normal Build Window for those use cases.
 
