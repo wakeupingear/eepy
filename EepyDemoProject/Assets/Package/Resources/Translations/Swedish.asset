@@ -100,3 +100,7 @@ MonoBehaviour:
     value: Vibration
   - key: open_pause_menu
     value: "ESC f\xF6r att \xF6ppna pausmenyn"
+  - key: steam_enabled
+    value: "Steam \xE4r aktiverat"
+  - key: steam_disabled
+    value: "Steam \xE4r inaktiverat"

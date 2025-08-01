@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvasGroup: {fileID: 1290041082}
-  controlsText: {fileID: 466689821}
+  topRightText: {fileID: 466689821}
   pauseFadeDuration: 0.1
 --- !u!1001 &1879040207
 PrefabInstance:

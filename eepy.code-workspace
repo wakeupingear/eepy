@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "EepyDemoProject"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"dotnet.defaultSolution": "EepyDemoProject.sln"
+	}
+}

@@ -100,3 +100,7 @@ MonoBehaviour:
     value: Rumble
   - key: open_pause_menu
     value: ESC to open the Pause Menu
+  - key: steam_enabled
+    value: Steam is Enabled
+  - key: steam_disabled
+    value: Steam is Disabled

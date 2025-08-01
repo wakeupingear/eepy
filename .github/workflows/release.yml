@@ -51,7 +51,7 @@ jobs:
                   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
                   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
               with:
-                  buildMethod: UnityBuilderAction.ExportPackage.Export
+                  buildMethod: Eepy.ExportPackage.Export
                   projectPath: EepyDemoProject
 
             - name: Upload to GitHub Release
