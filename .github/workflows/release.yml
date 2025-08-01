@@ -52,7 +52,7 @@ jobs:
               id: changelog
               run: |
                 VERSION=${GITHUB_REF##*/}  # e.g. "v1.0.0"
-                sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '$s/^## \[.*//; /^$/d' > extracted_changelog.md
+                sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '1d; $s/^## \[.*//; /^$/d' > extracted_changelog.md
 
             - name: Upload to GitHub Release
               if: steps.check_latest_tag.outputs.is_latest == 'true'
