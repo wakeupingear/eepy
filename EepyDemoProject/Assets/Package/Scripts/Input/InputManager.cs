@@ -13,6 +13,7 @@ using Steamworks;
 
 namespace Eepy
 {
+    [DisallowMultipleComponent]
     public class InputManager : MonoBehaviour
     {
         #region Static Variables

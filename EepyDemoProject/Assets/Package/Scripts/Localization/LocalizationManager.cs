@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -6,6 +5,7 @@ using TMPro;
 
 namespace Eepy
 {
+    [DisallowMultipleComponent]
     public class LocalizationManager : MonoBehaviour
     {
         public static LocalizationManager Instance { get; private set; }

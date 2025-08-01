@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace Eepy
     {
         public static Direction zeroDirection = Direction.Right;
         public static Direction[] directions = { Direction.Right, Direction.Up, Direction.Left, Direction.Down };
-        public static int2[] directionVectors = { new int2(1, 0), new int2(0, 1), new int2(-1, 0), new int2(0, -1) };
+        public static Vector2Int[] directionVectors = { new Vector2Int(1, 0), new Vector2Int(0, 1), new Vector2Int(-1, 0), new Vector2Int(0, -1) };
         public static float[] directionAngles = { 0f, 90f, 180f, -90f };
 
         public static float Damp(float a, float b, float lambda, float dt)
@@ -38,7 +37,7 @@ namespace Eepy
             return Quaternion.Lerp(a, b, 1 - Mathf.Exp(-lambda * dt));
         }
 
-        public static Direction VecToDir(int2 vec)
+        public static Direction VecToDir(Vector2Int vec)
         {
             if (vec.x > 0)
             {
@@ -59,7 +58,7 @@ namespace Eepy
             return Direction.Up;
         }
 
-        public static int2 DirToVec(Direction dir)
+        public static Vector2Int DirToVec(Direction dir)
         {
             return directionVectors[(int)dir];
         }
@@ -91,21 +90,14 @@ namespace Eepy
             return (Direction)(((int)directionA + (int)directionB) % 4);
         }
 
-        public static Direction HorizontalDirection(int2 vec)
+        public static Direction HorizontalDirection(Vector2Int vec)
         {
             return vec.x >= 0 ? Direction.Right : Direction.Left;
         }
 
-        public static Direction VerticalDirection(int2 vec)
+        public static Direction VerticalDirection(Vector2Int vec)
         {
             return vec.y >= 0 ? Direction.Up : Direction.Down;
-        }
-
-        public static int Sign(int a)
-        {
-            if (a > 0) { return 1; }
-            if (a < 0) { return -1; }
-            return 0;
         }
 
         /*
@@ -159,19 +151,19 @@ namespace Eepy
         }
         */
 
-        public static Vector2 IntToFloat(int2 inInt)
+        public static Vector2 IntToFloat(Vector2Int inInt)
         {
             return new Vector2(inInt.x, inInt.y);
         }
 
-        public static int2 PairwiseMax(int2 a, int2 b)
+        public static Vector2Int PairwiseMax(Vector2Int a, Vector2Int b)
         {
-            return new int2(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y));
+            return new Vector2Int(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y));
         }
 
-        public static int2 PairwiseMin(int2 a, int2 b)
+        public static Vector2Int PairwiseMin(Vector2Int a, Vector2Int b)
         {
-            return new int2(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y));
+            return new Vector2Int(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y));
         }
 
         public static Vector2 PairwiseMax(Vector2 a, Vector2 b)
@@ -189,12 +181,12 @@ namespace Eepy
             return new Vector3(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y), Mathf.Max(a.z, b.z));
         }
 
-        public static int ManhattanDistance(int2 a, int2 b)
+        public static int ManhattanDistance(Vector2Int a, Vector2Int b)
         {
             return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
         }
 
-        public static int AbsMax(int2 a)
+        public static int AbsMax(Vector2Int a)
         {
             return Mathf.Max(Mathf.Abs(a.x), Mathf.Abs(a.y));
         }
@@ -223,19 +215,19 @@ namespace Eepy
             }
         }
 
-        public static int2 RotatePositionCounterClockwise(int2 inPos)
+        public static Vector2Int RotatePositionCounterClockwise(Vector2Int inPos)
         {
-            return new int2(-inPos.y, inPos.x);
+            return new Vector2Int(-inPos.y, inPos.x);
         }
 
-        public static int GetVectorComponent(int2 vec, bool getX)
+        public static int GetVectorComponent(Vector2Int vec, bool getX)
         {
             return getX ? vec.x : vec.y;
         }
 
-        public static int2 MakeVectorComponent(int value, bool isX)
+        public static Vector2Int MakeVectorComponent(int value, bool isX)
         {
-            return isX ? new int2(value, 0) : new int2(0, value);
+            return isX ? new Vector2Int(value, 0) : new Vector2Int(0, value);
         }
 
         public static Vector3 Flatten(Vector3 inVector)
@@ -243,7 +235,7 @@ namespace Eepy
             return new Vector3(inVector.x, 0.0f, inVector.z);
         }
 
-        public static bool IsVectorUnitDirection(int2 inVec)
+        public static bool IsVectorUnitDirection(Vector2Int inVec)
         {
             return (Mathf.Abs(inVec.x) == 1) ^ (Mathf.Abs(inVec.y) == 1);
         }
