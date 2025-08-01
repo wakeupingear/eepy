@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+
+            GameplayUI.OnGameplayUIClosed += Unpause;
         }
         else
         {
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
         if (Instance == this)
         {
             Instance = null;
+
+            GameplayUI.OnGameplayUIClosed -= Unpause;
         }
     }
 

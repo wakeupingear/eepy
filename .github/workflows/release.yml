@@ -43,9 +43,11 @@ jobs:
               env:
                   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
                   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+                  VERSION: ${{ github.ref_name }}
               with:
                   buildMethod: Eepy.ExportPackage.Export
                   projectPath: EepyDemoProject
+                  customParameters: -packageVersion ${{ env.VERSION }} -exportPath Build/Eepy-${{ env.VERSION }}.unitypackage
             
             - name: Extract changelog for this version
               if: steps.check_latest_tag.outputs.is_latest == 'true'
@@ -58,5 +60,5 @@ jobs:
               if: steps.check_latest_tag.outputs.is_latest == 'true'
               uses: softprops/action-gh-release@v2
               with:
-                  files: EepyDemoProject/Build/Eepy.unitypackage
+                  files: EepyDemoProject/Build/Eepy-${{ env.VERSION }}.unitypackage
                   body_path: extracted_changelog.md

@@ -153,7 +153,9 @@ namespace Eepy
                 if (Instance.activeMenuScreens.Count == 0)
                 {
                     OnGameplayUIClosed?.Invoke();
-                    CloseGameplayUI();
+                    
+                    Instance.StopAllCoroutines();
+                    Instance.StartCoroutine(Util.FadeImage(Instance.menuBackground, Instance.menuBackgroundAlpha, 0f, Instance.menuBackgroundDuration));
                 }
                 else
                 {
@@ -168,11 +170,6 @@ namespace Eepy
             {
                 CloseMenu();
             }
-
-            Instance.StopAllCoroutines();
-            Instance.StartCoroutine(Util.FadeImage(Instance.menuBackground, Instance.menuBackgroundAlpha, 0f, Instance.menuBackgroundDuration));
-
-            GameManager.Instance.Unpause();
         }
     }
 };
