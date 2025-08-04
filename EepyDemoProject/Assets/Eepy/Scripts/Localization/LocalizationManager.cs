@@ -56,8 +56,11 @@ namespace Eepy
 
         private void Start()
         {
-            // Make sure all localized text is synced from the start
-            OnLanguageChanged?.Invoke(currentTranslation);
+            if (Instance.isLocalizationEnabled)
+            {
+                // Make sure all localized text is synced from the start
+                OnLanguageChanged?.Invoke(currentTranslation);
+            }
         }
 
         public static string Get(string key)

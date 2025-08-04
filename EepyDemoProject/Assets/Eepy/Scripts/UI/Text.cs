@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -26,13 +24,16 @@ namespace Eepy
         
         public void OnLanguageChanged(GameTranslation translation)
         {
-            if (text != null && localizationKey != null && localizationKey != "" && LocalizationManager.IsLocalizationEnabled())
+            if (translation != null)
             {
-                text.text = LocalizationManager.Get(localizationKey);
-            }
-            if (text != null && useGlobalFont)
-            {
-                text.font = translation.font;
+                if (text != null && localizationKey != null && localizationKey != "" && LocalizationManager.IsLocalizationEnabled())
+                {
+                    text.text = LocalizationManager.Get(localizationKey);
+                }
+                if (text != null && useGlobalFont)
+                {
+                    text.font = translation.font;
+                }
             }
         }
 

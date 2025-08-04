@@ -91,7 +91,6 @@ namespace Eepy
         public List<InputAction> upActions, leftActions, downActions, rightActions, interactActions, backActions;
         public List<InputAction> allFocusActions { get; private set; } = new List<InputAction>();
 
-        private List<MenuScreen> allMenuScreens = new List<MenuScreen>();
         private Stack<MenuScreen> activeMenuScreens = new Stack<MenuScreen>();
 
         private void Awake()
@@ -106,6 +105,8 @@ namespace Eepy
                 allFocusActions.AddRange(rightActions);
                 allFocusActions.AddRange(interactActions);
                 allFocusActions.AddRange(backActions);
+
+                Instance.menuBackground.color = new Color(Instance.menuBackground.color.r, Instance.menuBackground.color.g, Instance.menuBackground.color.b, 0f);
             }
         }
         
