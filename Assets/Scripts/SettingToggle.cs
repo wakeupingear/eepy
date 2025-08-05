@@ -2,17 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 
 namespace Eepy
 {
+    [DisallowMultipleComponent]
     public class SettingToggle : MenuInput
     {
         [SerializeField]
         private Text label;
         [SerializeField]
         private MenuButton groupButton, decButton, incButton;
+        [SerializeField]
+        private MenuScreen menuScreen;
 
         public enum SettingsType
         {
@@ -29,7 +30,7 @@ namespace Eepy
         {
             public string value;
             public string localizationKey;
-            public string universalLabel;
+            public string text;
         }
         [SerializeField]
         private List<Options> options;
@@ -66,12 +67,18 @@ namespace Eepy
             SettingsManager.OnSettingsChanged += SyncMenuItem;
             LocalizationManager.OnLanguageChanged += ApplyTranslation;
             ApplyTranslation(LocalizationManager.Instance.currentTranslation);
+
+            menuScreen.OnMenuOpened += SyncMenuItem;
         }
 
         private void OnDestroy()
         {
             SettingsManager.OnSettingsChanged -= SyncMenuItem;
             LocalizationManager.OnLanguageChanged -= ApplyTranslation;
+            if (menuScreen != null)
+            {
+                menuScreen.OnMenuOpened -= SyncMenuItem;
+            }
         }
 
         public override bool ReceiveDirectionalInput()
@@ -79,11 +86,15 @@ namespace Eepy
             if (Util.AnyInputActionListDown(GameplayUI.Instance.leftActions))
             {
                 Decrement();
+                groupButton.SetTextColor(incButton.GetFocusedColor());
+
                 return true;
             }
             else if (Util.AnyInputActionListDown(GameplayUI.Instance.rightActions))
             {
                 Increment();
+                groupButton.SetTextColor(incButton.GetFocusedColor());
+
                 return true;
             }
 
@@ -118,7 +129,7 @@ namespace Eepy
             string originalText = label.GetText();
             foreach (var option in options)
             {
-                label.SetText(option.universalLabel == "" ? LocalizationManager.Get(option.localizationKey) : option.universalLabel);
+                label.SetText(LocalizationManager.Get(option.localizationKey, option.text));
                 label.text.ForceMeshUpdate();
                 float width = label.text.GetPreferredValues().x;
                 if (width > longestWidth)
@@ -155,9 +166,20 @@ namespace Eepy
                 currentOption++;
                 UpdateSetting(1);
             }
-            else
-            {
-            }
+        }
+
+        public void IncrementButton()
+        {
+            Increment();
+            incButton.SetTextColor(incButton.isDisabled ? incButton.GetNormalColor() : incButton.GetFocusedColor());
+            decButton.SetTextColor(decButton.GetNormalColor());
+        }
+
+        public void DecrementButton()
+        {
+            Decrement();
+            incButton.SetTextColor(incButton.GetNormalColor());
+            decButton.SetTextColor(decButton.isDisabled ? decButton.GetNormalColor() : decButton.GetFocusedColor());
         }
 
         public void IncrementWithWrap()
@@ -171,6 +193,12 @@ namespace Eepy
                 currentOption = 0;
                 UpdateSetting(1);
             }
+        }
+
+        public void KeyboardInteract()
+        {
+            IncrementWithWrap();
+            groupButton.SetTextColor(incButton.GetFocusedColor());
         }
 
         private bool CanDecrement()
@@ -220,9 +248,9 @@ namespace Eepy
             string newLocalizationKey = "";
 
             var currentOptionSafe = options[currentOption];
-            if (currentOptionSafe.universalLabel != null && currentOptionSafe.universalLabel != "")
+            if (currentOptionSafe.text != null && currentOptionSafe.text != "")
             {
-                newText = currentOptionSafe.universalLabel;
+                newText = currentOptionSafe.text;
             } 
             else 
             {
@@ -254,14 +282,7 @@ namespace Eepy
             }
             else
             {
-                if (newLocalizationKey != "")
-                {
-                    label.SetLocalizationKey(newLocalizationKey);
-                }
-                else
-                {
-                    label.SetText(newText);
-                }
+                label.SetLocalizationKey(newLocalizationKey, newText);
             }
 
             if (groupButton != null)
@@ -285,39 +306,9 @@ namespace Eepy
             UpdateLabel(0);
         }
 
-        public bool ReceiveInput(InputAction inAction)
-        {
-            if (inAction == InputAction.Left)
-            {
-                if (CanDecrement())
-                {
-                    Decrement();
-                }
-
-                return true;
-            }
-            else if (inAction == InputAction.Right)
-            {
-                if (CanIncrement())
-                {
-                    Increment();
-                }
-
-                return true;
-            }
-
-            return false;
-        }
-
         private IEnumerator AnimateChange(string prev, string next, string nextLocalizationKey, int dir)
         {
-            if (nextLocalizationKey != "" && nextLocalizationKey != null)
-            {
-                label.SetLocalizationKey(nextLocalizationKey);
-            } else
-            {
-                label.SetText(next);
-            }
+            label.SetLocalizationKey(nextLocalizationKey, next);
             labelCanvasGroup.alpha = 0f;
             label.transform.localPosition = labelPos + dir * labelAnimationOffset;
             if(label.text) label.text.ForceMeshUpdate();

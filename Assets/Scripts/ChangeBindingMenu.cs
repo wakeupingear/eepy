@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -15,6 +14,8 @@ namespace Eepy
         private GameObject bindingButtonPrefab;
         [SerializeField]
         private MenuButton addButton, backButton;
+        [SerializeField]
+        private string initialAddText, inProgressAddText, removeText, invalidInputText;
         [SerializeField]
         private string initialAddTextKey = "add_keybinding", inProgressAddTextKey = "adding_keybinding", removeTextKey = "remove_keybinding", invalidInputTextKey = "invalid_keybinding";
         [SerializeField]
@@ -135,7 +136,7 @@ namespace Eepy
                 {
                     var bindingButton = bindingButtons[i];
                     bindingButton.gameObject.SetActive(true);
-                    bindingButton.GetPrimaryText().SetLocalizationKey(removeTextKey);
+                    bindingButton.GetPrimaryText().SetLocalizationKey(removeTextKey, removeText);
 
                     int index = i;
                     bindingButton.OnClick.RemoveAllListeners();
@@ -189,13 +190,13 @@ namespace Eepy
         {
             StopCoroutine(ResetColorAfterDelay());
 
-            addButton.GetPrimaryText().SetLocalizationKey(initialAddTextKey);
+            addButton.GetPrimaryText().SetLocalizationKey(initialAddTextKey, initialAddText);
             addButton.OnClick.RemoveAllListeners();
             addButton.OnClick.AddListener(() =>
             {
                 isAddMode = true;
                 justEnteredAddMode = true;
-                addButton.GetPrimaryText().SetLocalizationKey(inProgressAddTextKey);
+                addButton.GetPrimaryText().SetLocalizationKey(inProgressAddTextKey, inProgressAddText);
                 InputManager.DisableInputManager(true);
                 areButtonsDisabled = true;
             });
@@ -226,13 +227,13 @@ namespace Eepy
         private IEnumerator ResetColorAfterDelay()
         {
             Color originalColor = addButton.GetPrimaryText().text.color;
-            addButton.GetPrimaryText().SetLocalizationKey(invalidInputTextKey);
+            addButton.GetPrimaryText().SetLocalizationKey(invalidInputTextKey, invalidInputText);
             addButton.GetPrimaryText().text.color = Color.red;
             isInvalidInput = true;
 
             yield return new WaitForSecondsRealtime(invalidInputMessageDuration);
 
-            addButton.GetPrimaryText().SetLocalizationKey(initialAddTextKey);
+            addButton.GetPrimaryText().SetLocalizationKey(inProgressAddTextKey, inProgressAddText);
             addButton.GetPrimaryText().text.color = originalColor;
             isInvalidInput = false;
         }

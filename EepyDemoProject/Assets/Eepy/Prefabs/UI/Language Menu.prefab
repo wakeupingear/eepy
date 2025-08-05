@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 5280137480305522919, guid: 0fd08e19055ca4b48872ff0ece5d9d76,
         type: 3}
       propertyPath: m_Name
-      value: Language Menu Variant
+      value: Language Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6222407979119944279, guid: 0fd08e19055ca4b48872ff0ece5d9d76,
         type: 3}
@@ -276,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 5113893190184931602, guid: 74c7163a22cf04f76b1e7989940e3f33,
         type: 3}
       propertyPath: m_text
-      value: language
+      value: Language
       objectReference: {fileID: 0}
     - target: {fileID: 8958629082532586099, guid: 74c7163a22cf04f76b1e7989940e3f33,
         type: 3}

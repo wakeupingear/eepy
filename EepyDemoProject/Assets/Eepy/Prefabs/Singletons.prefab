@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8be050d16abe418e97c255d0632fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalizationEnabled: 1
+  isLocalizationEnabled: 0
   defaultLanguageName: English
   allLanguages:
   - {fileID: 11400000, guid: 37317d0335a4a461d95c530c31f7fe73, type: 2}
@@ -103,11 +103,15 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     allowRebinding: 1
+    defaultKeyBindings: 1401000061000000
+    defaultControllerBindings: edfffffffdffffff
     held: 0
     releasedThisFrame: 0
     pressedThisFrame: 0
     numRepeatedPresses: 0
     nextInputTime: 0
+    totalHoldTime: 0
+    startTime: -1
   - action: 2
     allowRepeatsWhenHeld: 1
     repeatDelay:
@@ -135,11 +139,15 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     allowRebinding: 1
+    defaultKeyBindings: 1201000073000000
+    defaultControllerBindings: eefffffffeffffff
     held: 0
     releasedThisFrame: 0
     pressedThisFrame: 0
     numRepeatedPresses: 0
     nextInputTime: 0
+    totalHoldTime: 0
+    startTime: -1
   - action: 3
     allowRepeatsWhenHeld: 1
     repeatDelay:
@@ -167,12 +175,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     allowRebinding: 1
+    defaultKeyBindings: 1301000064000000
+    defaultControllerBindings: ecfffffffcffffff
     held: 0
     releasedThisFrame: 0
     pressedThisFrame: 0
     numRepeatedPresses: 0
     nextInputTime: 0
-  - action: 4
+    totalHoldTime: 0
+    startTime: -1
+  - action: 0
     allowRepeatsWhenHeld: 1
     repeatDelay:
       serializedVersion: 2
@@ -199,12 +211,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     allowRebinding: 1
+    defaultKeyBindings: 1101000077000000
+    defaultControllerBindings: efffffffffffffff
     held: 0
     releasedThisFrame: 0
     pressedThisFrame: 0
     numRepeatedPresses: 0
     nextInputTime: 0
-  - action: 9
+    totalHoldTime: 0
+    startTime: -1
+  - action: 4
     allowRepeatsWhenHeld: 0
     repeatDelay:
       serializedVersion: 2
@@ -213,12 +229,16 @@ MonoBehaviour:
       m_PostInfinity: 0
       m_RotationOrder: 4
     allowRebinding: 1
+    defaultKeyBindings: 0d00000065000000
+    defaultControllerBindings: faffffff
     held: 0
     releasedThisFrame: 0
     pressedThisFrame: 0
     numRepeatedPresses: 0
     nextInputTime: 0
-  - action: 10
+    totalHoldTime: 0
+    startTime: -1
+  - action: 5
     allowRepeatsWhenHeld: 0
     repeatDelay:
       serializedVersion: 2
@@ -227,11 +247,15 @@ MonoBehaviour:
       m_PostInfinity: 0
       m_RotationOrder: 4
     allowRebinding: 0
+    defaultKeyBindings: 1b0000000900000070000000
+    defaultControllerBindings: f3fffffff2ffffff
     held: 0
     releasedThisFrame: 0
     pressedThisFrame: 0
     numRepeatedPresses: 0
     nextInputTime: 0
+    totalHoldTime: 0
+    startTime: -1
   rumbleProfiles: []
   keyboardSprites:
   - keyCode: 8
@@ -378,7 +402,7 @@ MonoBehaviour:
     keySprite: {fileID: 21300000, guid: 3119ea926824a4e1a896f2abfc21c6ec, type: 3}
   - keyCode: 316
     keySprite: {fileID: 21300000, guid: 11e2bbe73dc174d0db2e24d58f006b83, type: 3}
-  disabledKeyCodes: 1b00000043010000440100000000000037010000360100000c000000130000000a0100000b0100000c0100000d0100000e0100000f01000010010000260100002701000028010000230000002400000025000000260000002700000028000000290000002a0000002d000000400000005f0000002e01000060000000390100003b0100003d0100003e0100003f010000
+  disabledKeyCodes: 1b000000430100004401000037010000360100000c000000130000000a0100000b0100000c0100000d0100000e0100000f01000010010000260100002701000028010000230000002400000025000000260000002700000028000000290000002a0000002d000000400000005f0000002e01000060000000390100003b0100003d0100003e0100003f010000
   movementInputActions: 01000000020000000300000004000000
   controllerConfigs:
   - {fileID: 11400000, guid: 6157b017838614a0abcbeb652de7112a, type: 2}

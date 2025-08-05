@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_text
-      value: quit
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -216,6 +216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: localizationKey
       value: resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
+        type: 3}
+      propertyPath: m_text
+      value: Resume
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -396,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_text
-      value: resume
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -793,7 +798,7 @@ PrefabInstance:
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_text
-      value: resume
+      value: Controls
       objectReference: {fileID: 0}
     - target: {fileID: 6823405707826450360, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}

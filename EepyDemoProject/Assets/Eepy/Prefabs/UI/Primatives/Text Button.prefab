@@ -188,7 +188,7 @@ MonoBehaviour:
       m_Calls: []
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   focusedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  disabledOpacity: 0.5
+  disabledOpacity: 0.25
   text:
   - {fileID: 3584157459294853943}
   menuScreen: {fileID: 0}

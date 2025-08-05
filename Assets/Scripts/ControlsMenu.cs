@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -9,6 +8,8 @@ namespace Eepy
     {
         [SerializeField]
         private MenuButton backButton, resetButton;
+        [SerializeField]
+        private string resetAllText, resetAllConfirmText;
         [SerializeField]
         private string resetAllKey = "reset_all", resetAllConfirmKey = "reset_all_confirm";
         [SerializeField]
@@ -76,7 +77,7 @@ namespace Eepy
         {
             base.OnFocused();
 
-            resetButton.GetPrimaryText().SetLocalizationKey(resetAllKey);
+            resetButton.GetPrimaryText().SetLocalizationKey(resetAllKey, resetAllText);
             CheckIfCanReset();
         }
 
@@ -104,22 +105,21 @@ namespace Eepy
 
         private void ResetResetButton()
         {
-            resetButton.GetPrimaryText().SetLocalizationKey(resetAllKey);
+            resetButton.GetPrimaryText().SetLocalizationKey(resetAllKey, resetAllText);
             resetConfirmation = false;
-            resetButton.SetDisabled(true);
-            backButton.Focus();
         }
 
         public void ResetButtonPressed()
         {
             if (resetConfirmation)
             {
-                InputManager.ResetAllBindings();
                 ResetResetButton();
+                backButton.Focus();
+                InputManager.ResetAllBindings();
             }
             else
             {
-                resetButton.GetPrimaryText().SetLocalizationKey(resetAllConfirmKey);
+                resetButton.GetPrimaryText().SetLocalizationKey(resetAllConfirmKey, resetAllConfirmText);
                 resetConfirmation = true;
             }
         }

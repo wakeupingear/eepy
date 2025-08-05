@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,9 +10,9 @@ namespace Eepy
         [SerializeField]
         private MenuButton confirmButton;
 
-        public void SetTitleLocalizationKeyAndAction(string key, UnityAction onConfirm)
+        public void SetTitleLocalizationKeyAndAction(string key, string fallbackText, UnityAction onConfirm)
         {
-            title.SetLocalizationKey(key);
+            title.SetLocalizationKey(key, fallbackText);
 
             confirmButton.OnClick.RemoveAllListeners();
             confirmButton.OnClick.AddListener(onConfirm);

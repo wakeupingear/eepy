@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Eepy;
@@ -32,9 +31,9 @@ public class InGameUI : MonoBehaviour
 
             string text = "";
 #if !DISABLESTEAMWORKS
-            text += LocalizationManager.Get("steam_enabled");
+            text += LocalizationManager.Get("steam_enabled", "Steam is Enabled");
 #else
-            text += LocalizationManager.Get("steam_disabled");
+            text += LocalizationManager.Get("steam_disabled", "Steam is Disabled");
 #endif
             text += "\n\n";
 

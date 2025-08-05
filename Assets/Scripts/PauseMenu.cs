@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Eepy
 {
     public class PauseMenu : MenuScreen
@@ -18,7 +14,7 @@ namespace Eepy
 
         public void OpenQuitMenu()
         {
-            GameplayUI.confirmMenu.SetTitleLocalizationKeyAndAction("quit_confirm", () =>
+            GameplayUI.confirmMenu.SetTitleLocalizationKeyAndAction("quit_confirm", "Really Quit?", () =>
             {
                 QuitGame();
             });

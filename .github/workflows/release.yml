@@ -59,6 +59,8 @@ jobs:
             - name: Upload to GitHub Release
               if: steps.check_latest_tag.outputs.is_latest == 'true'
               uses: softprops/action-gh-release@v2
+              env:
+                  VERSION: ${{ github.ref_name }}
               with:
                   files: EepyDemoProject/Build/Eepy-${{ env.VERSION }}.unitypackage
                   body_path: extracted_changelog.md

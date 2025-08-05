@@ -56,18 +56,27 @@ namespace Eepy
 
         private void Start()
         {
-            // Make sure all localized text is synced from the start
-            OnLanguageChanged?.Invoke(currentTranslation);
+            if (Instance.isLocalizationEnabled)
+            {
+                // Make sure all localized text is synced from the start
+                OnLanguageChanged?.Invoke(currentTranslation);
+            }
         }
 
-        public static string Get(string key)
+        public static string Get(string key, string fallbackText)
         {
-            if (Instance.currentTranslation == null)
+            if (Instance.currentTranslation != null && IsLocalizationEnabled())
+            {
+                return Instance.currentTranslation.Get(key);
+            }
+            else if (fallbackText != null && fallbackText != "")
+            {
+                return fallbackText;
+            }
+            else
             {
                 return $"[{key}]";
             }
-
-            return Instance.currentTranslation.Get(key);
         }
 
         public static void LoadLanguage(string code)

@@ -229,7 +229,7 @@ namespace Eepy
 
         private void Start()
         {
-            if (!isLanguageSet)
+            if (!isLanguageSet && LocalizationManager.IsLocalizationEnabled())
             {
                 language = SteamManager.GetCurrentGameLanguage();
                 Util.Log("Auto-setting language to user's language: " + language);
