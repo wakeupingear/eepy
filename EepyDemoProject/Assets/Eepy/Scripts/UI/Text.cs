@@ -28,7 +28,7 @@ namespace Eepy
             {
                 if (text != null && localizationKey != null && localizationKey != "" && LocalizationManager.IsLocalizationEnabled())
                 {
-                    text.text = LocalizationManager.Get(localizationKey);
+                    text.text = LocalizationManager.Get(localizationKey, "");
                 }
                 if (text != null && useGlobalFont)
                 {
@@ -55,10 +55,17 @@ namespace Eepy
             return text.text;
         }
 
-        public void SetLocalizationKey(string key)
+        public void SetLocalizationKey(string key, string fallbackText)
         {
-            localizationKey = key;
-            OnLanguageChanged(LocalizationManager.Instance.currentTranslation);
+            if (LocalizationManager.IsLocalizationEnabled() && key != null && key != "")
+            {
+                localizationKey = key;
+                OnLanguageChanged(LocalizationManager.Instance.currentTranslation);
+            }
+            else if (fallbackText != null)
+            {
+                SetText(fallbackText);
+            }
         }
 
         public void SetUnderline(bool underline)

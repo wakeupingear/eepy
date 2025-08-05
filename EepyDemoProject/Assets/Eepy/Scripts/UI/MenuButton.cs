@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
@@ -30,6 +28,7 @@ namespace Eepy
 
         [SerializeField]
         private List<Text> text = new List<Text>();
+        private List<MenuButton> textButtons = new List<MenuButton>();
         
         // Reference to the container menu
         [HideInInspector]
@@ -42,9 +41,17 @@ namespace Eepy
         private Vector3 lastMousePos;
         private SettingToggle settingToggle;
 
+        private Color currentColor;
+
         private void Awake()
         {
             settingToggle = GetComponent<SettingToggle>();
+            currentColor = GetPrimaryText().text.color;
+
+            foreach (Text t in text)
+            {
+                textButtons.Add(t.GetComponent<MenuButton>());
+            }
         }
 
         private void Update()
@@ -127,16 +134,17 @@ namespace Eepy
                 {
                     Unfocus(false);
                 }
-
-                SetTextColor(GetPrimaryText().text.color);
+            
+                SetTextColor(currentColor);
             }
         }
 
-        private void SetTextColor(Color color)
+        public void SetTextColor(Color color)
         {
-            foreach (Text t in text)
+            currentColor = color;
+            for (int i = 0; i < text.Count; i++)
             {
-                t.text.color = isDisabled ? new Color(color.r, color.g, color.b, disabledOpacity) : color;
+                text[i].text.color = isDisabled || (textButtons[i] != null && textButtons[i].isDisabled) ? new Color(color.r, color.g, color.b, disabledOpacity) : color;
             }
         }
 
@@ -223,6 +231,16 @@ namespace Eepy
         public Text GetPrimaryText()
         {
             return text[0];
+        }
+
+        public Color GetNormalColor()
+        {
+            return normalColor;
+        }
+
+        public Color GetFocusedColor()
+        {
+            return focusedColor;
         }
     }
 }

@@ -14,6 +14,8 @@ namespace Eepy
         [SerializeField]
         private HorizontalLayoutGroup layoutGroup;
         [SerializeField]
+        private string titleFallbackText;
+        [SerializeField]
         private string keybindingsKey = "keybindings";
         [SerializeField]
         private Text title;
@@ -49,10 +51,10 @@ namespace Eepy
         {
             this.inputAction = inputAction;
 
-            title.SetLocalizationKey(inputAction.ToString().ToLower());
+            title.SetLocalizationKey(inputAction.ToString().ToLower(), inputAction.ToString());
             button.OnClick.AddListener(() =>
             {
-                GameplayUI.changeBindingMenu.SetTitle(title.text.text + " - " + LocalizationManager.Get(keybindingsKey), LocalizationManager.GetCurrentFont());
+                GameplayUI.changeBindingMenu.SetTitle(title.text.text + " - " + LocalizationManager.Get(keybindingsKey, titleFallbackText), LocalizationManager.GetCurrentFont());
                 GameplayUI.changeBindingMenu.SetInputAction(inputAction);
                 GameplayUI.OpenMenu(GameplayUI.changeBindingMenu);
             });

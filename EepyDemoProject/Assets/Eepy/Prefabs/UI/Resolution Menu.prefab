@@ -276,7 +276,6 @@ MonoBehaviour:
   slideOffset: {x: 36, y: 0}
   startingButton: {fileID: 0}
   autoLink: 0
-  gameplayUI: {fileID: 0}
   resolutionButtonPrefab: {fileID: 6619345763797151904, guid: 5940f82fb7ff54dca8ab97b415de7b41,
     type: 3}
   maxResolutions: 12
@@ -403,7 +402,7 @@ PrefabInstance:
     - target: {fileID: 5113893190184931602, guid: 74c7163a22cf04f76b1e7989940e3f33,
         type: 3}
       propertyPath: m_text
-      value: Title
+      value: Resolution
       objectReference: {fileID: 0}
     - target: {fileID: 8958629082532586099, guid: 74c7163a22cf04f76b1e7989940e3f33,
         type: 3}

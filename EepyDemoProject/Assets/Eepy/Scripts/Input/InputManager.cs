@@ -216,6 +216,13 @@ namespace Eepy
 
         public static Dictionary<InputAction, List<int>> GetAllDefaultKeyBindings()
         {
+            Dictionary<InputAction, List<int>> defaultBindings = new Dictionary<InputAction, List<int>>();
+            foreach (var inputState in Instance.inputConfigs)
+            {
+                defaultBindings[inputState.action] = inputState.defaultKeyBindings.Select(code => (int)code).ToList();
+                defaultBindings[inputState.action].AddRange(inputState.defaultControllerBindings.Select(code => (int)code));
+            }
+            
             return defaultBindings;
         }
 
@@ -384,6 +391,11 @@ namespace Eepy
             public AnimationCurve repeatDelay;
             public bool allowRebinding = true;
 
+            [Tooltip("Default keyboard bindings. Players can override these bindings in-game.")]
+            public List<KeyCode> defaultKeyBindings = new List<KeyCode>();
+            [Tooltip("Default controller bindings. Players can override these bindings in-game.")]
+            public List<ControllerCode> defaultControllerBindings = new List<ControllerCode>();
+
             [HideInInspector]
             public bool held = false;
             [HideInInspector]
@@ -415,30 +427,6 @@ namespace Eepy
         {
             public List<SavedKeyBindings> bindings;
         }
-
-        // Default keyboard bindings
-        [SerializeField, Tooltip("Default keyboard bindings. Players can override these bindings in-game.")]
-        private Dictionary<InputAction, List<KeyCode>> defaultKeyBindings = new Dictionary<InputAction, List<KeyCode>>
-        {
-            { InputAction.Up, new List<KeyCode> { KeyCode.W, KeyCode.UpArrow } },
-            { InputAction.Left, new List<KeyCode> { KeyCode.A, KeyCode.LeftArrow } },
-            { InputAction.Down, new List<KeyCode> { KeyCode.S, KeyCode.DownArrow } },
-            { InputAction.Right, new List<KeyCode> { KeyCode.D, KeyCode.RightArrow } },
-            { InputAction.Interact, new List<KeyCode> { KeyCode.E, KeyCode.Return } },
-            { InputAction.Pause, new List<KeyCode> { KeyCode.Escape } }
-        };
-
-        // Default controller bindings
-        [SerializeField, Tooltip("Default controller bindings. Players can override these bindings in-game.")]
-        private Dictionary<InputAction, List<ControllerCode>> defaultControllerBindings = new Dictionary<InputAction, List<ControllerCode>>()
-        {
-            { InputAction.Up, new List<ControllerCode> { ControllerCode.DPadUp, ControllerCode.LeftStickUp } },
-            { InputAction.Left, new List<ControllerCode> { ControllerCode.DPadLeft, ControllerCode.LeftStickLeft } },
-            { InputAction.Down, new List<ControllerCode> { ControllerCode.DPadDown, ControllerCode.LeftStickDown } },
-            { InputAction.Right, new List<ControllerCode> { ControllerCode.DPadRight, ControllerCode.LeftStickRight } },
-            { InputAction.Interact, new List<ControllerCode> { ControllerCode.FaceButtonDown } },
-            { InputAction.Pause, new List<ControllerCode> { ControllerCode.Select, ControllerCode.Start } }
-        };
 
         [Serializable]
         public struct RumbleProfile
@@ -521,7 +509,6 @@ namespace Eepy
         // >= 0 is a keyboard key
         // < 0 is a controller input
         private static Dictionary<InputAction, List<int>> keyBindings = new Dictionary<InputAction, List<int>>();
-        private static Dictionary<InputAction, List<int>> defaultBindings = new Dictionary<InputAction, List<int>>();
         private const string keyBindingKey = "KeyBindings";
 
         // The last primary controller that was used
@@ -584,7 +571,6 @@ namespace Eepy
                 }
 
                 FillUnassignedBindings(keyBindings);
-                FillUnassignedBindings(defaultBindings, true);
 
                 foreach (var binding in keyboardSprites)
                 {
@@ -910,13 +896,13 @@ namespace Eepy
 
         private static void FillUnassignedBindings(Dictionary<InputAction, List<int>> bindings, bool forceChange = false)
         {
-            foreach (var action in Enum.GetValues(typeof(InputAction)))
+            foreach (var inputState in inputStatesMap.Values)
             {
-                if (!bindings.ContainsKey((InputAction)action) && Instance.defaultKeyBindings.ContainsKey((InputAction)action))
+                if (forceChange || !bindings.ContainsKey(inputState.action))
                 {
-                    // merge the controller and keyboard default bindings
-                    bindings[(InputAction)action] = new List<int>(Instance.defaultKeyBindings[(InputAction)action].Select(code => (int)code));
-                    bindings[(InputAction)action].AddRange(Instance.defaultControllerBindings[(InputAction)action].Select(code => (int)code));
+                    bindings[inputState.action] = new List<int>();
+                    bindings[inputState.action].AddRange(inputState.defaultKeyBindings.Select(code => (int)code));
+                    bindings[inputState.action].AddRange(inputState.defaultControllerBindings.Select(code => (int)code));
                 }
             }
         }

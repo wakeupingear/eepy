@@ -132,12 +132,12 @@ MonoBehaviour:
   _confirmMenu: {fileID: 6857047016364312306}
   _resolutionMenu: {fileID: 2212630203066728824}
   _languageMenu: {fileID: 565613188285495381}
-  upActions: 01000000
-  leftActions: 02000000
-  downActions: 03000000
-  rightActions: 04000000
-  interactActions: 09000000
-  backActions: 0a000000
+  upActions: 00000000
+  leftActions: 01000000
+  downActions: 02000000
+  rightActions: 03000000
+  interactActions: 04000000
+  backActions: 05000000
 --- !u!1 &8507770297373919662
 GameObject:
   m_ObjectHideFlags: 0

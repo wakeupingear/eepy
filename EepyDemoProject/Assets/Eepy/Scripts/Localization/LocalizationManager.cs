@@ -63,14 +63,20 @@ namespace Eepy
             }
         }
 
-        public static string Get(string key)
+        public static string Get(string key, string fallbackText)
         {
-            if (Instance.currentTranslation == null)
+            if (Instance.currentTranslation != null && IsLocalizationEnabled())
+            {
+                return Instance.currentTranslation.Get(key);
+            }
+            else if (fallbackText != null && fallbackText != "")
+            {
+                return fallbackText;
+            }
+            else
             {
                 return $"[{key}]";
             }
-
-            return Instance.currentTranslation.Get(key);
         }
 
         public static void LoadLanguage(string code)

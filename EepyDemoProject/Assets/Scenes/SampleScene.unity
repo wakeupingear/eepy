@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 6911893252814652846, guid: dd45fb4cca703476aa0f1da48659ab2d,
         type: 3}
       propertyPath: m_text
-      value: pressed inputs go here
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6911893252814652846, guid: dd45fb4cca703476aa0f1da48659ab2d,
         type: 3}
@@ -895,11 +895,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Singletons
       objectReference: {fileID: 0}
-    - target: {fileID: 8698593374936242841, guid: c161456e83e384e1bb7b4a6220fdd89d,
-        type: 3}
-      propertyPath: isLocalizationEnabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1087,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 6911893252814652846, guid: dd45fb4cca703476aa0f1da48659ab2d,
         type: 3}
       propertyPath: m_text
-      value: esc
+      value: ESC to open the Pause Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6911893252814652846, guid: dd45fb4cca703476aa0f1da48659ab2d,
         type: 3}
@@ -1842,11 +1837,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597378955788683467, guid: 8a46ba4eb00c147bb9d46bd306a1c644,
-        type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4624304663815108705, guid: 8a46ba4eb00c147bb9d46bd306a1c644,
         type: 3}

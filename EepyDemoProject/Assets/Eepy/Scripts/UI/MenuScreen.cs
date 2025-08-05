@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Eepy
 {
-    [RequireComponent(typeof(CanvasGroup))]
+    [DisallowMultipleComponent, RequireComponent(typeof(CanvasGroup))]
     public class MenuScreen : MonoBehaviour
     {
         [SerializeField]
@@ -46,6 +47,8 @@ namespace Eepy
             CoveredUp = 2
         }
         public MenuState menuState { get; private set; } = MenuState.Closed;
+
+        public Action OnMenuOpened, OnMenuReopened, OnMenuClosed, OnMenuCoveredUp;
 
         // Make sure to call base.Awake() in your Awake() function!
         protected virtual void Awake()
@@ -148,6 +151,7 @@ namespace Eepy
         {
             OnFocused();
             StartStateChangeAnimation(MenuState.Open);
+            OnMenuOpened?.Invoke();
 
             // Since we haven't visited this menu yet, the starting button should be automatically highlighted.
             // This isn't required for OnReopened because menu/button state is preserved while covered up.
@@ -164,6 +168,7 @@ namespace Eepy
         {
             OnFocused();
             StartStateChangeAnimation(MenuState.Open);
+            OnMenuReopened?.Invoke();
         }
 
         // Called when the menu receives focus (OnOpened or OnReopened).
@@ -180,6 +185,7 @@ namespace Eepy
         {
             OnUnfocused();
             StartStateChangeAnimation(MenuState.Closed);
+            OnMenuClosed?.Invoke();
         }
 
         //Called when another menu is added to the top of the menu stack.
@@ -187,6 +193,7 @@ namespace Eepy
         {
             OnUnfocused();
             StartStateChangeAnimation(MenuState.CoveredUp);
+            OnMenuCoveredUp?.Invoke();
         }
 
         // Called when the menu loses focus (OnClosed or OnCoveredUp)

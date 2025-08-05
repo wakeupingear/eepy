@@ -1,29 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Singletons : MonoBehaviour
+namespace Eepy
 {
-    public static Singletons Instance { get; private set; }
-
-    private void Awake()
+    [DisallowMultipleComponent]
+    public class Singletons : MonoBehaviour
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+        public static Singletons Instance { get; private set; }
 
-    private void OnDestroy()
-    {
-        if (Instance == this)
+        private void Awake()
         {
-            Instance = null;
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                Instance = null;
+            }
         }
     }
 }

@@ -173,6 +173,10 @@ MonoBehaviour:
     type: 3}
   addButton: {fileID: 5077584902843540311}
   backButton: {fileID: 5468781438129579326}
+  initialAddText: Add New Binding
+  inProgressAddText: Press Any Unused Key
+  removeText: Remove
+  invalidInputText: Key is Already in Use
   initialAddTextKey: add_keybinding
   inProgressAddTextKey: adding_keybinding
   removeTextKey: remove_keybinding
@@ -180,6 +184,8 @@ MonoBehaviour:
   invalidInputMessageDuration: 1
   siblingIndex: 4
   maxBindings: 8
+  exitAddModeKeys: 
+  exitAddModeActions: 05000000
 --- !u!224 &8467855458223036898 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6102826893971609255, guid: 0fd08e19055ca4b48872ff0ece5d9d76,
@@ -242,7 +248,7 @@ PrefabInstance:
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_text
-      value: back
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}

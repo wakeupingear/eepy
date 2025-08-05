@@ -113,6 +113,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5113893190184931602, guid: 74c7163a22cf04f76b1e7989940e3f33,
+        type: 3}
+      propertyPath: m_text
+      value: Controls
+      objectReference: {fileID: 0}
     - target: {fileID: 8958629082532586099, guid: 74c7163a22cf04f76b1e7989940e3f33,
         type: 3}
       propertyPath: m_Name
@@ -185,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_text
-      value: back
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
@@ -482,6 +487,8 @@ MonoBehaviour:
   autoLink: 0
   backButton: {fileID: 38554940742808658}
   resetButton: {fileID: 7382431895329999057}
+  resetAllText: Reset All
+  resetAllConfirmText: Really Reset?
   resetAllKey: reset_all
   resetAllConfirmKey: reset_all_confirm
   controlBindingOverviewButtonPrefab: {fileID: 8749113130173726735, guid: 26dc2c708419f4fd88760a7936ddf4f7,
@@ -929,7 +936,7 @@ PrefabInstance:
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
       propertyPath: m_text
-      value: reset
+      value: Reset All
       objectReference: {fileID: 0}
     - target: {fileID: 6624810868472167018, guid: ae5feb6c8011841b2b8bbf9f4a76a4e2,
         type: 3}
