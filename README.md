@@ -1,22 +1,25 @@
 # Eepy: An Opinionated Unity Starter Kit
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/wakeupingear/eepy/actions)
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/wakeupingear/eepy/releases)
+[![Build Status](https://github.com/wakeupingear/eepy/actions/workflows/release.yml/badge.svg)](https://github.com/wakeupingear/eepy/actions/workflows/release.yml)
+[![Version](https://img.shields.io/github/v/release/wakeupingear/eepy)](https://github.com/wakeupingear/eepy/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 All the boilerplate you'll need for your Unity game. Opinionated, simple, battle-tested on Steam, and free.
 
+![Demo Screenshot](/docs/media/editor-demo.png)
+
 ## Features
 
-*   **A Better Input System**
+*   **Full In-Game Input Remapping**
     *   Define typesafe input actions in code.
     *   Configure per-key settings like input repeating and thresholds.
-    *   **Replaces Rewired**
+    *   **Replaces the New Input System**
 
 *   **Native Controller Support**
     *   Out-of-the-box support for DualShock, DualSense, Xbox, and Steam Deck controllers.
     *   Easily create custom configs for niche or unsupported controllers.
     *   Optional vibration with the Steam Input API
+    *   **Replaces Rewired**
 
 *   **Menu System:**
     *   A collection of UI primitives to build your game's menus.
@@ -42,7 +45,7 @@ All the boilerplate you'll need for your Unity game. Opinionated, simple, battle
     * Earlier Editor versions should also work but are currently untested.
 *   [Text Mesh Pro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/index.html)
     * Included by default in new Unity projects!
-*   Don't use the New Input System
+*   Don't use the New Input System!
 
 ### Installation
 
