@@ -38,6 +38,7 @@ jobs:
                   # Check out folders
                   git checkout dev -- EepyDemoProject/
                   git checkout dev -- README.md
+                  git checkout dev -- CONTRIBUTING.md
                   git checkout dev -- CHANGELOG.md
                   git checkout dev -- LICENSE.md
                   git checkout dev -- .gitignore
