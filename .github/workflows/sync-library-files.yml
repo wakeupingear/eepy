@@ -4,9 +4,6 @@ on:
     push:
         branches:
             - dev
-        paths:
-            - '.github/workflows/sync-library-files.yml'
-            - 'EepyDemoProject/Assets/Eepy/**'
 
 jobs:
     sync-folders:
