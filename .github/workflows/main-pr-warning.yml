@@ -1,0 +1,20 @@
+name: Warn on main branch PR
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add PR comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '🚨 **Warning** 🚨\n\nPull requests to `main` should be avoided. Please open pull requests against the `dev` branch instead.'
+            }) 
